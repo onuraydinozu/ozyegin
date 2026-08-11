@@ -7,6 +7,7 @@ export const metadata: Metadata = {
 };
 
 import Header from "@/components/layout/Header";
+import FloatingActionBar from "@/components/features/FloatingActionBar";
 
 export default function RootLayout({
   children,
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <Header />
         {children}
+        <FloatingActionBar />
       </body>
     </html>
   );
