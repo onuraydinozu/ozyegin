@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 import EventBanner from "@/components/features/EventBanner";
 import InfoSection from "@/components/features/InfoSection";
 import BrochuresSection from "@/components/features/BrochuresSection";
-import StatisticsSection from "@/components/features/StatisticsSection";
+import DynamicStatsMarquee from "@/components/features/DynamicStatsMarquee";
+import PersonaQuiz from "@/components/features/PersonaQuiz";
 import OzuShorts from "@/components/features/OzuShorts";
 import StatsMap from "@/components/features/StatsMap";
 import GamifiedCampusTour from "@/components/features/GamifiedCampusTour";
@@ -13,6 +14,7 @@ import FloatingActionBar from "@/components/features/FloatingActionBar";
 import AIChatbot from "@/components/features/AIChatbot";
 import SustainabilitySection from "@/components/features/SustainabilitySection";
 import AlumniNetwork from "@/components/features/AlumniNetwork";
+import ParentPortalSection from "@/components/features/ParentPortalSection";
 import Footer from "@/components/layout/Footer";
 
 export default function Home() {
@@ -21,18 +23,20 @@ export default function Home() {
       
       {/* NEW: Event Banner as the new Hero */}
       <EventBanner />
-      
+      {/* Dynamic Stats Marquee */}
+      <DynamicStatsMarquee />
+
       {/* Info Section (Aday Öğrenci, Burslar vs) */}
       <InfoSection />
 
       {/* NEW: Brochures & About Section */}
       <BrochuresSection />
 
+      {/* Persona Quiz - Hangi ÖzÜ Bölümü Sensin? */}
+      <PersonaQuiz />
+
       {/* NEW: Sustainability / Eco-friendly Section */}
       <SustainabilitySection />
-
-      {/* Statistics Section */}
-      <StatisticsSection />
 
       {/* Main Content (V2 Features) */}
       <div className="relative z-10 bg-background pb-32 pt-16">
@@ -108,6 +112,16 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </motion.section>
+
+          {/* Parent Portal Section */}
+          <motion.section
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+          >
+            <ParentPortalSection />
           </motion.section>
 
           {/* Alumni Network */}

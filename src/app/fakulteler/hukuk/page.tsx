@@ -11,12 +11,31 @@ import {
   GraduationCap, 
   Plus, 
   Minus, 
-  Landmark
+  Landmark,
+  Cpu, 
+  Shield, 
+  Coins, 
+  Handshake, 
+  Globe, 
+  Map, 
+  Briefcase, 
+  FileText, 
+  Building2, 
+  Terminal, 
+  Users, 
+  FileSearch, 
+  Fingerprint, 
+  Bitcoin, 
+  Building, 
+  FileSignature, 
+  Video,
+  QrCode
 } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import LawTicket from "@/components/tickets/LawTicket";
 
-export default function LawPage() {
+export default function LawFacultyPage() {
   return (
     <main className="bg-slate-50 text-slate-800 font-sans min-h-screen overflow-x-hidden">
       <Header />
@@ -101,56 +120,103 @@ export default function LawPage() {
         </div>
       </div>
 
-      {/* 1. Hedefimiz ve Hızlı Erişimler */}
-      <section className="relative z-10 max-w-7xl mx-auto px-6 py-20 border-t border-slate-200">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <span className="text-red-600 font-bold text-sm tracking-wide block mb-2 uppercase">Hukuk Fakültesi</span>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">Hedefimiz</h2>
-            <div className="w-20 h-1 bg-red-600 mb-8 rounded-full"></div>
-            <p className="text-lg text-slate-600 leading-relaxed mb-8">
-              Adaletin ve hukukun üstünlüğünün savunucusu olan, etik ilkelere bağlı, analitik ve eleştirel düşünme becerisine sahip, hem ulusal mevzuata hem de uluslararası hukuk normlarına hâkim vizyoner hukukçular yetiştirmektir.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <a href="https://www.ozyegin.edu.tr/tr/hukuk" target="_blank" rel="noreferrer" className="px-6 py-3 bg-[#ce2225] hover:bg-red-700 text-white font-semibold rounded-xl transition-all shadow-[0_0_20px_rgba(206,34,37,0.3)]">
-                Hukuk Lisans Programı
-              </a>
-              <a href="https://catalog.ozyegin.edu.tr/3d-flip-book/2026-2027-tercih-donemi-bilgilendirme-brosuru/" target="_blank" rel="noreferrer" className="px-6 py-3 bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-800 font-semibold rounded-xl transition-all">
-                Fakülte Broşürü
-              </a>
-            </div>
-          </div>
-          <div className="relative h-[400px] w-full rounded-3xl overflow-hidden border border-red-100 group bg-red-50/50">
-            <div className="absolute inset-0 bg-gradient-to-tr from-red-100/50 to-slate-100/50 z-10"></div>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <Landmark className="w-48 h-48 text-red-900/10 group-hover:scale-110 group-hover:rotate-6 transition-all duration-700" />
-            </div>
-          </div>
+      {/* 1. "Law 2.0 & LegalTech" Uzmanlık Hub'ı */}
+      <section className="relative z-10 w-full py-24 bg-slate-900 border-t border-slate-700/50 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+           <div className="text-center mb-16">
+              <span className="text-red-500 font-bold text-sm tracking-widest uppercase mb-4 block">GELECEĞİN HUKUKU</span>
+              <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Law 2.0 & LegalTech <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-400">Uzmanlık Hub'ı</span></h2>
+              <p className="text-slate-400 max-w-2xl mx-auto text-lg">Klasik Borçlar Hukuku'nun ötesine geçiyoruz. Günümüzün milyar dolarlık yeni hukuk alanlarına odaklanan uzmanlık yollarını keşfet.</p>
+           </div>
+           
+           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {/* Card 1 */}
+              <div className="group bg-slate-800/50 backdrop-blur-md border border-slate-700 hover:border-red-500/50 rounded-3xl p-8 transition-all duration-300 relative overflow-hidden">
+                 <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-[40px] group-hover:bg-red-500/20 transition-all"></div>
+                 <Cpu className="w-12 h-12 text-red-400 mb-6" />
+                 <h3 className="text-xl font-bold text-white mb-4">Yapay Zeka & Siber Hukuk</h3>
+                 <ul className="space-y-3 text-sm text-slate-300">
+                    <li className="flex items-start gap-2"><Fingerprint className="w-4 h-4 text-red-500 shrink-0 mt-0.5" /> AI Etiği ve Algoritmik Sorumluluk</li>
+                    <li className="flex items-start gap-2"><Shield className="w-4 h-4 text-red-500 shrink-0 mt-0.5" /> KVKK & GDPR Uyum Süreçleri</li>
+                    <li className="flex items-start gap-2"><Terminal className="w-4 h-4 text-red-500 shrink-0 mt-0.5" /> Siber Suçlar ve Dijital Deliller</li>
+                 </ul>
+              </div>
+              {/* Card 2 */}
+              <div className="group bg-slate-800/50 backdrop-blur-md border border-slate-700 hover:border-red-500/50 rounded-3xl p-8 transition-all duration-300 relative overflow-hidden">
+                 <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-[40px] group-hover:bg-red-500/20 transition-all"></div>
+                 <Bitcoin className="w-12 h-12 text-red-400 mb-6" />
+                 <h3 className="text-xl font-bold text-white mb-4">Fintek & Blokzincir</h3>
+                 <ul className="space-y-3 text-sm text-slate-300">
+                    <li className="flex items-start gap-2"><FileSignature className="w-4 h-4 text-red-500 shrink-0 mt-0.5" /> Akıllı Sözleşmeler (Smart Contracts)</li>
+                    <li className="flex items-start gap-2"><Coins className="w-4 h-4 text-red-500 shrink-0 mt-0.5" /> Kripto Varlık Regülasyonları</li>
+                    <li className="flex items-start gap-2"><Building className="w-4 h-4 text-red-500 shrink-0 mt-0.5" /> Dijital Bankacılık Hukuku</li>
+                 </ul>
+              </div>
+              {/* Card 3 */}
+              <div className="group bg-slate-800/50 backdrop-blur-md border border-slate-700 hover:border-red-500/50 rounded-3xl p-8 transition-all duration-300 relative overflow-hidden">
+                 <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-[40px] group-hover:bg-red-500/20 transition-all"></div>
+                 <Globe className="w-12 h-12 text-red-400 mb-6" />
+                 <h3 className="text-xl font-bold text-white mb-4">Ticaret & Uluslararası Tahkim</h3>
+                 <ul className="space-y-3 text-sm text-slate-300">
+                    <li className="flex items-start gap-2"><Handshake className="w-4 h-4 text-red-500 shrink-0 mt-0.5" /> Şirket Birleşmeleri (M&A)</li>
+                    <li className="flex items-start gap-2"><Building2 className="w-4 h-4 text-red-500 shrink-0 mt-0.5" /> Uluslararası Yatırım Uyuşmazlıkları</li>
+                    <li className="flex items-start gap-2"><Scale className="w-4 h-4 text-red-500 shrink-0 mt-0.5" /> Londra / Cenevre Tahkim Kuralları</li>
+                 </ul>
+              </div>
+              {/* Card 4 */}
+              <div className="group bg-slate-800/50 backdrop-blur-md border border-slate-700 hover:border-red-500/50 rounded-3xl p-8 transition-all duration-300 relative overflow-hidden">
+                 <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-[40px] group-hover:bg-red-500/20 transition-all"></div>
+                 <BookOpen className="w-12 h-12 text-red-400 mb-6" />
+                 <h3 className="text-xl font-bold text-white mb-4">Fikri Mülkiyet & Start-Up</h3>
+                 <ul className="space-y-3 text-sm text-slate-300">
+                    <li className="flex items-start gap-2"><Briefcase className="w-4 h-4 text-red-500 shrink-0 mt-0.5" /> Girişimcilik Ekosistemi</li>
+                    <li className="flex items-start gap-2"><FileSearch className="w-4 h-4 text-red-500 shrink-0 mt-0.5" /> Patent ve Marka Hukuku</li>
+                    <li className="flex items-start gap-2"><Users className="w-4 h-4 text-red-500 shrink-0 mt-0.5" /> Melek Yatırımcı Sözleşmeleri</li>
+                 </ul>
+              </div>
+           </div>
         </div>
       </section>
 
-      {/* 2. Accreditation & Distinction Banner */}
-      <section className="relative z-10 max-w-7xl mx-auto px-6 py-12">
-        <div className="bg-gradient-to-r from-red-500/10 via-rose-600/5 to-red-500/5 border border-red-500/20 rounded-3xl p-8 md:p-12 backdrop-blur-md relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-red-500/10 rounded-full blur-[80px]"></div>
-          
-          <div className="relative z-10 flex flex-col md:flex-row items-center gap-8">
-            <div className="flex-shrink-0 w-24 h-24 rounded-full bg-red-500/10 border-2 border-red-400/30 flex items-center justify-center">
-              <Award className="w-12 h-12 text-red-600" />
+      {/* 2. "Moot Court & Hukuk Kliniği" 360° Pratik Laboratuvarı */}
+      <section className="relative z-10 max-w-7xl mx-auto px-6 py-24">
+         <div className="text-center mb-16">
+            <span className="inline-block px-4 py-1.5 bg-red-50 border border-red-200 rounded-full text-red-700 text-sm font-bold tracking-widest uppercase mb-4">SİMÜLASYON & PRATİK</span>
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6">"Moot Court & Hukuk Kliniği"<br/>360° Pratik Laboratuvarı</h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">Hukuk sadece amfide dinlenmez, duruşma salonunda yaşanır. Türkiye'nin en aktif pratik hukuk laboratuvarına hoş geldin.</p>
+         </div>
+
+         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-2 bg-gradient-to-br from-red-900 to-rose-950 rounded-3xl p-10 md:p-12 text-white relative overflow-hidden flex flex-col justify-end min-h-[400px] shadow-2xl">
+               <div className="absolute inset-0 opacity-20 bg-[url('https://www.ozyegin.edu.tr/sites/default/files/images/hukuk/moot-court.jpg')] bg-cover bg-center mix-blend-overlay"></div>
+               <div className="absolute inset-0 bg-gradient-to-t from-red-950 via-red-950/80 to-transparent"></div>
+               <div className="relative z-10">
+                  <div className="flex items-center gap-3 mb-4">
+                     <div className="bg-red-500/30 p-2 rounded-lg backdrop-blur-sm"><Video className="w-6 h-6 text-red-200" /></div>
+                     <span className="font-bold tracking-wider text-red-200 uppercase text-sm">ÖzÜ Kurgusal Duruşma Salonu</span>
+                  </div>
+                  <h3 className="text-3xl font-black mb-4">Birebir Adliye Düzeni ve Kayıt Altyapısı</h3>
+                  <p className="text-red-100/80 text-lg max-w-2xl">Duruşma yönetimi, çapraz sorgu ve savunma tekniklerini, ses ve görüntü kayıt sistemiyle donatılmış modern simülasyon salonumuzda gerçeğe en yakın şartlarda deneyimlersin.</p>
+               </div>
             </div>
-            <div className="flex-grow text-center md:text-left">
-              <h3 className="text-2xl md:text-3xl font-bold text-red-900 mb-4">
-                Uluslararası Farazi Dava (Moot Court) Yarışmaları ve Uygulamalı Hukuk Eğitimi
-              </h3>
-              <p className="text-red-950/80 text-lg leading-relaxed mb-6">
-                Özyeğin Üniversitesi Hukuk Fakültesi, kurgusal duruşma salonlarında yetiştirdiği öğrencileriyle Philip C. Jessup ve Vis Moot gibi prestijli uluslararası dava simülasyonlarında ülkemizi temsil etmekte ve uygulama odaklı adalet anlayışını ön planda tutmaktadır.
-              </p>
-              <a href="https://www.ozyegin.edu.tr/tr/hukuk-fakultesi" target="_blank" rel="noreferrer" className="inline-block px-6 py-2 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition-colors shadow-lg shadow-red-600/20">
-                Daha Fazla Bilgi
-              </a>
+            
+            <div className="flex flex-col gap-8">
+               <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-xl shadow-slate-200/50 flex-1">
+                  <Award className="w-10 h-10 text-red-600 mb-4" />
+                  <h4 className="text-xl font-bold text-slate-900 mb-3">Uluslararası Takımlar</h4>
+                  <p className="text-slate-600 text-sm mb-4">Dünyanın en prestijli kurgusal duruşma yarışmaları olan Philip C. Jessup ve Willem C. Vis'te fakültemizi ve ülkemizi küresel arenada temsil etme fırsatı.</p>
+                  <div className="flex flex-wrap gap-2">
+                     <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold">Willem C. Vis</span>
+                     <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold">Jessup</span>
+                  </div>
+               </div>
+               <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-xl shadow-slate-200/50 flex-1">
+                  <Handshake className="w-10 h-10 text-red-600 mb-4" />
+                  <h4 className="text-xl font-bold text-slate-900 mb-3">Hukuk Kliniği (Legal Clinic)</h4>
+                  <p className="text-slate-600 text-sm">Öğrencilerin akademik danışmanlar eşliğinde gerçek hukuki vakalara dahil olarak toplumsal fayda sağladığı ve henüz öğrenciyken pratik kazandığı uygulama modeli.</p>
+               </div>
             </div>
-          </div>
-        </div>
+         </div>
       </section>
 
       {/* 3. Dean's Message */}
@@ -183,206 +249,125 @@ export default function LawPage() {
         </div>
       </section>
 
-      {/* 4. Mezunlarımız & Bir Bölüm Üç Açı */}
-      <section className="relative z-10 w-full bg-slate-100/70 border-y border-slate-200 py-24">
+      {/* 3. Çift Dil & Uluslararası Hukuk Geçidi */}
+      <section className="relative z-10 w-full py-24 bg-red-50 border-y border-red-100 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="text-red-600 font-bold text-sm tracking-wide block mb-2 uppercase">Hukuk Fakültesi</span>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">Mezunlarımız</h2>
-            <div className="w-20 h-1 bg-red-600 mx-auto rounded-full"></div>
-          </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
-              <p>
-                Özyeğin Üniversitesi Hukuk Fakültesi öğrencileri, teorik alt yapıyı vaka analizleri, kurgusal dava çalışmaları ve sektör stajları ile pekiştiren dinamik bir eğitim sürecinden geçer.
-              </p>
-              <p>
-                Mezunlarımız; serbest avukatlık, hakimlik-savcılık, uluslararası hukuk bürolarında danışmanlık, ulusal ve global şirketlerde hukuk müşavirliği, akademisyenlik ve uluslararası kuruluşlarda uzmanlık gibi geniş bir yelpazede fark yaratmaktadır.
-              </p>
-            </div>
-            
-            <div className="bg-gradient-to-br from-white to-slate-50 border border-slate-200 rounded-3xl p-8 shadow-xl relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-[50px] group-hover:bg-red-500/20 transition-all"></div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">Bir Bölüm Üç Açı</h3>
-              <p className="text-slate-500 mb-8">
-                Lisans bölümlerimizi akademisyenlerimizin, mezunlarımızın ve öğrencilerimizin deneyimlerinden ve bakış açılarından yola çıkarak tanıtan YouTube video serimize buradan erişebilirsiniz.
-              </p>
-              <a href="https://youtube.com/playlist?list=PLKzTz6QQRYz17A3Heyl2p_2Va8h-mjKZP" target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 px-6 py-3 bg-[#FF0000] hover:bg-red-600 text-white font-bold rounded-xl transition-all shadow-lg shadow-red-500/30">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
-                Seriyi İzle
-              </a>
-            </div>
-          </div>
+           <div className="flex flex-col lg:flex-row gap-12 items-center">
+              <div className="lg:w-1/2">
+                 <span className="text-red-600 font-bold text-sm tracking-widest uppercase mb-4 block">GLOBAL LEGAL PASSPORT</span>
+                 <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6">Çift Dil & Uluslararası Hukuk Geçidi</h2>
+                 <p className="text-lg text-slate-600 mb-8 leading-relaxed">Sadece Türkiye'de değil, tüm dünyada hukuk yapabilmek için ihtiyacınız olan altyapı. "Yurt dışı imkanı var mı?" sorusunun ÖzÜ'deki net cevabı.</p>
+                 
+                 <div className="space-y-6">
+                    <div className="flex gap-4">
+                       <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center border border-red-100 shadow-sm shrink-0">
+                          <Map className="w-6 h-6 text-red-600" />
+                       </div>
+                       <div>
+                          <h4 className="text-xl font-bold text-slate-900 mb-2">Alman & İsviçre Hukuku Entegrasyonu</h4>
+                          <p className="text-slate-600">Türk Medeni ve Borçlar Hukuku'nun kökeni olan Alman ve İsviçre sistemine tam hakimiyet sağlayan Almanca seçmeli dersler ve akademik partnerlikler.</p>
+                       </div>
+                    </div>
+                    <div className="flex gap-4">
+                       <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center border border-red-100 shadow-sm shrink-0">
+                          <FileText className="w-6 h-6 text-red-600" />
+                       </div>
+                       <div>
+                          <h4 className="text-xl font-bold text-slate-900 mb-2">Hukuk İngilizcesi & Legal Writing</h4>
+                          <p className="text-slate-600">Uluslararası sözleşme yazımı (Contract Drafting), tahkim dili ve İngilizce dilekçe tekniklerini kapsayan ileri seviye mesleki dil eğitimi.</p>
+                       </div>
+                    </div>
+                    <div className="flex gap-4">
+                       <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center border border-red-100 shadow-sm shrink-0">
+                          <GraduationCap className="w-6 h-6 text-red-600" />
+                       </div>
+                       <div>
+                          <h4 className="text-xl font-bold text-slate-900 mb-2">Yurt Dışı LL.M. Hazırlığı</h4>
+                          <p className="text-slate-600">Amerika ve Avrupa'nın en iyi hukuk fakültelerinden (Harvard, Columbia, Leiden vb.) kabul alma ve burs bulma süreçlerinde etkin danışmanlık.</p>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+              <div className="lg:w-1/2 w-full h-[500px] relative bg-white rounded-3xl border border-red-100 shadow-2xl p-6 flex flex-col justify-center items-center">
+                 <Globe className="w-64 h-64 text-red-50 absolute opacity-50" />
+                 <div className="relative z-10 w-full max-w-sm">
+                    <div className="bg-slate-900 p-6 rounded-2xl text-white shadow-2xl transform rotate-3">
+                       <h3 className="font-bold text-xl mb-4 text-red-400">ÖzÜ Global Legal Passport</h3>
+                       <div className="space-y-4">
+                          <div className="flex justify-between items-center border-b border-slate-700 pb-2">
+                             <span className="text-slate-400 text-sm">Destination</span>
+                             <span className="font-mono font-bold">WORLDWIDE</span>
+                          </div>
+                          <div className="flex justify-between items-center border-b border-slate-700 pb-2">
+                             <span className="text-slate-400 text-sm">Class</span>
+                             <span className="font-mono font-bold">PREMIUM LEGAL</span>
+                          </div>
+                          <div className="flex justify-between items-center pb-2">
+                             <span className="text-slate-400 text-sm">Languages</span>
+                             <span className="font-mono font-bold text-emerald-400">TR / EN / DE</span>
+                          </div>
+                       </div>
+                       <QrCode className="w-full mt-6 h-12 text-slate-500 opacity-50" />
+                    </div>
+                 </div>
+              </div>
+           </div>
         </div>
       </section>
 
-      {/* 5. İstatistikler ve Çalışılan Kurumlar */}
-      <section className="relative z-10 max-w-7xl mx-auto px-6 py-20">
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <span className="text-red-600 font-bold text-sm tracking-wide block mb-2 uppercase">Hukuk Fakültesi</span>
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">ÖzÜ Hukuk Mezunları Güçlü Başlıyor</h2>
-          <p className="text-xl text-red-700">Mezunlarımız ulusal ve uluslararası hukuk alanında öne çıkıyor</p>
-        </motion.div>
+      {/* 4. Kariyer Yolları & Sektör Ağı Dashboard'u */}
+      <section className="relative z-10 max-w-7xl mx-auto px-6 py-24">
+         <div className="text-center mb-16">
+            <span className="inline-block px-4 py-1.5 bg-slate-100 border border-slate-200 rounded-full text-slate-700 text-sm font-bold tracking-widest uppercase mb-4">MEZUN AĞI & KARİYER</span>
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6">Kariyer Yolları & Sektör Ağı <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-amber-500">Dashboard'u</span></h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">Mezunlarımız nerede? Dev hukuk bürolarından global şirketlerin hukuk müşavirliklerine kadar ÖzÜ Hukuk ekosistemi verileri.</p>
+         </div>
 
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={{
-            visible: { transition: { staggerChildren: 0.1 } },
-            hidden: {}
-          }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
-        >
-          {[
-            { value: "%48", label: "Mezuniyet anında veya öncesinde işe başlama", color: "text-red-600" },
-            { value: "4 Ay", label: "Mezuniyet sonrası ortalama işe başlama süresi", color: "text-blue-600" },
-            { value: "%15", label: "Uluslararası hukuk büroları ve yurt dışı kurumlar", color: "text-indigo-600" },
-            { value: "%32", label: "Lisansüstü (LL.M.) eğitimine devam edenler", color: "text-purple-600" }
-          ].map((stat, idx) => (
-            <motion.div 
-              key={idx}
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } }
-              }}
-              className="bg-white border border-slate-200 rounded-2xl p-6 text-center hover:bg-slate-50 transition-colors shadow-sm"
-            >
-              <div className={`text-5xl font-black mb-2 ${stat.color}`}>{stat.value}</div>
-              <p className="text-slate-600 text-sm">{stat.label}</p>
-            </motion.div>
-          ))}
-        </motion.div>
-        
-        <p className="text-xs text-slate-500 text-center mb-16 italic">
-          * Bu oranlar Haziran 2026 itibariyle ulaşılabilmiş son 3 yıl mezunlarımızın verilerine göre hesaplanmıştır.<br/>
-          ** Bu oranlar Haziran 2026 itibariyle ulaşılabilmiş tüm mezunlarımızın verilerine göre hesaplanmıştır.
-        </p>
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Stat Card 1 */}
+            <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-lg shadow-slate-200/50 hover:-translate-y-2 transition-transform duration-300">
+               <div className="w-12 h-12 bg-red-50 text-red-600 rounded-xl flex items-center justify-center mb-6"><Building2 className="w-6 h-6" /></div>
+               <h3 className="text-4xl font-black text-slate-900 mb-2">%35+</h3>
+               <h4 className="font-bold text-slate-800 mb-2">Tier-1 Hukuk Büroları</h4>
+               <p className="text-sm text-slate-500">Uluslararası birleşme ve satın almalara (M&A) bakan en büyük ve prestijli dev hukuk bürolarında çalışan mezun oranı.</p>
+            </div>
+            {/* Stat Card 2 */}
+            <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-lg shadow-slate-200/50 hover:-translate-y-2 transition-transform duration-300">
+               <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-6"><Briefcase className="w-6 h-6" /></div>
+               <h3 className="text-4xl font-black text-slate-900 mb-2">%25</h3>
+               <h4 className="font-bold text-slate-800 mb-2">In-House Counsel</h4>
+               <p className="text-sm text-slate-500">THY, Trendyol, Garanti BBVA, Unilever gibi devlerin şirket içi hukuk departmanlarında hukuk müşaviri olarak görev alanlar.</p>
+            </div>
+            {/* Stat Card 3 */}
+            <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-lg shadow-slate-200/50 hover:-translate-y-2 transition-transform duration-300">
+               <div className="w-12 h-12 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center mb-6"><Scale className="w-6 h-6" /></div>
+               <h3 className="text-4xl font-black text-slate-900 mb-2">%15</h3>
+               <h4 className="font-bold text-slate-800 mb-2">Hakimlik & Akademi</h4>
+               <p className="text-sm text-slate-500">Adalet Bakanlığı sınavlarında yüksek başarı oranlarıyla yargı kurumlarına yerleşenler ve akademide ilerleyenler.</p>
+            </div>
+            {/* Stat Card 4 */}
+            <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-lg shadow-slate-200/50 hover:-translate-y-2 transition-transform duration-300">
+               <div className="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center mb-6"><GraduationCap className="w-6 h-6" /></div>
+               <h3 className="text-4xl font-black text-slate-900 mb-2">%30</h3>
+               <h4 className="font-bold text-slate-800 mb-2">ÇAP & Yan Dal Oranı</h4>
+               <p className="text-sm text-slate-500">Hukuk + İşletme, Hukuk + Uluslararası İlişkiler veya Bilgisayar Mühendisliği ile multidisipliner bir kariyere adım atanlar.</p>
+            </div>
+         </div>
 
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-        >
-          <h3 className="text-2xl font-bold text-center text-slate-900 mb-8">Mezunlarımızın Çalıştığı Önde Gelen Kurumlar ve Bürolar</h3>
-          
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={{
-              visible: { transition: { staggerChildren: 0.05 } },
-              hidden: {}
-            }}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
-          >
-            {[
-              { name: "Pekin & Pekin", count: 18 },
-              { name: "Paksoy Hukuk Bürosu", count: 15 },
-              { name: "Hergüner Bilgen Özeke", count: 14 },
-              { name: "Esin Avukatlık Ortaklığı (Baker McKenzie)", count: 12 },
-              { name: "Moral & Ortakları", count: 10 },
-              { name: "PwC Türkiye Hukuk", count: 9 },
-              { name: "KPMG Türkiye", count: 8 },
-              { name: "Deloitte Türkiye", count: 8 },
-              { name: "EY Türkiye", count: 7 },
-              { name: "Türk Hava Yolları Hukuk", count: 6 },
-              { name: "Trendyol Hukuk", count: 6 },
-              { name: "Garanti BBVA Hukuk", count: 5 },
-              { name: "İş Bankası Hukuk", count: 5 },
-              { name: "Fiba Holding Hukuk", count: 5 },
-              { name: "Yazıcıoğlu Hukuk", count: 4 }
-            ].map((company, idx) => (
-              <motion.div 
-                key={idx} 
-                variants={{
-                  hidden: { opacity: 0, scale: 0.9, y: 10 },
-                  visible: { opacity: 1, scale: 1, y: 0, transition: { type: "spring", stiffness: 150 } }
-                }}
-                className="bg-white border border-slate-200 rounded-xl p-4 flex flex-col items-center justify-center text-center hover:bg-amber-50/50 transition-colors shadow-sm"
-              >
-                <span className="text-slate-700 font-semibold text-sm mb-2">{company.name}</span>
-                <span className="text-amber-600 font-black text-xl">{company.count}</span>
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.div>
+         {/* Big Law Logolar */}
+         <div className="mt-16 bg-slate-900 rounded-3xl p-10 text-center relative overflow-hidden">
+            <h4 className="text-white font-bold mb-8 uppercase tracking-widest text-sm">Mezunlarımızın Kariyer İnşa Ettiği Bazı Dev Kurumlar</h4>
+            <div className="flex flex-wrap justify-center gap-6 opacity-80">
+               <span className="px-6 py-3 bg-slate-800 text-white rounded-lg font-mono font-bold border border-slate-700">Pekin & Pekin</span>
+               <span className="px-6 py-3 bg-slate-800 text-white rounded-lg font-mono font-bold border border-slate-700">Paksoy</span>
+               <span className="px-6 py-3 bg-slate-800 text-white rounded-lg font-mono font-bold border border-slate-700">Hergüner</span>
+               <span className="px-6 py-3 bg-slate-800 text-white rounded-lg font-mono font-bold border border-slate-700">Baker McKenzie</span>
+               <span className="px-6 py-3 bg-slate-800 text-white rounded-lg font-mono font-bold border border-slate-700">Türk Hava Yolları</span>
+               <span className="px-6 py-3 bg-slate-800 text-white rounded-lg font-mono font-bold border border-slate-700">PwC Hukuk</span>
+               <span className="px-6 py-3 bg-slate-800 text-white rounded-lg font-mono font-bold border border-slate-700">Trendyol</span>
+            </div>
+         </div>
       </section>
-
-      {/* 6. Fakülte Öne Çıkanlar */}
-      <motion.section 
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.8 }}
-        className="relative z-10 w-full bg-white py-24 border-t border-slate-200"
-      >
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
-          
-          {/* Card 1: Moot Court Salonu */}
-          <div className="flex flex-col h-full">
-            <div className="mb-4">
-              <span className="text-amber-700 font-bold text-sm tracking-wide block mb-2">Hukuk Fakültesi</span>
-              <h2 className="text-[#1A1A1A] font-black text-4xl leading-tight">Farazi Dava<br/>(Moot Court)<br/>Salonu</h2>
-            </div>
-            <div className="w-full aspect-square md:aspect-[4/3] relative mb-6 overflow-hidden bg-amber-50 rounded-2xl flex items-center justify-center border border-amber-100">
-              <Gavel className="w-24 h-24 text-amber-600/40" />
-            </div>
-            <p className="text-[#6D6D6D] text-[15px] leading-relaxed mb-8 flex-grow">
-              Özyeğin Üniversitesi Hukuk Fakültesi, öğrencilerinin duruşma tecrübesi kazanmaları için tam donanımlı Kurgusal Duruşma Salonu&apos;na sahiptir. Dava simülasyonları ve uluslararası yarışma hazırlıkları bu özel alanda yürütülür.
-            </p>
-            <a href="https://www.ozyegin.edu.tr/tr/hukuk-fakultesi" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-amber-700 hover:bg-amber-800 text-white font-semibold rounded-full transition-colors w-max">
-              Daha Fazla
-              <ChevronRight className="w-4 h-4" />
-            </a>
-          </div>
-
-          {/* Card 2: Uluslararası Başarılar */}
-          <div className="flex flex-col h-full">
-            <div className="mb-4">
-              <span className="text-amber-700 font-bold text-sm tracking-wide block mb-2">Hukuk Fakültesi</span>
-              <h2 className="text-[#1A1A1A] font-black text-4xl leading-tight">Uluslararası<br/>Yarışmalar ve<br/>Dereceler</h2>
-            </div>
-            <div className="w-full aspect-square md:aspect-[4/3] relative mb-6 overflow-hidden bg-slate-50 rounded-2xl flex items-center justify-center border border-slate-200">
-              <Award className="w-24 h-24 text-amber-500/40" />
-            </div>
-            <p className="text-[#6D6D6D] text-[15px] leading-relaxed mb-8 flex-grow">
-              Fakülte Moot Court takımlarımız, Philip C. Jessup Uluslararası Law Moot Court Competition ve Willem C. Vis International Commercial Arbitration Moot gibi dünyanın en itibarlı hukuk yarışmalarında üniversitemizi ve ülkemizi başarıyla temsil etmektedir.
-            </p>
-            <a href="https://www.ozyegin.edu.tr/tr/hukuk-fakultesi" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-amber-700 hover:bg-amber-800 text-white font-semibold rounded-full transition-colors w-max">
-              Daha Fazla
-              <ChevronRight className="w-4 h-4" />
-            </a>
-          </div>
-
-          {/* Card 3: Academic Staff */}
-          <div className="flex flex-col h-full">
-            <div className="mb-4">
-              <span className="text-amber-700 font-bold text-sm tracking-wide block mb-2">Hukuk Fakültesi</span>
-              <h2 className="text-[#1A1A1A] font-black text-4xl leading-tight">Akademik<br/>Kadro</h2>
-            </div>
-            <div className="w-full aspect-square md:aspect-[4/3] relative mb-6 overflow-hidden bg-slate-50 rounded-2xl flex items-center justify-center border border-slate-200">
-              <GraduationCap className="w-24 h-24 text-slate-400/40" />
-            </div>
-            <p className="text-[#6D6D6D] text-[15px] leading-relaxed mb-8 flex-grow">
-              Özyeğin Üniversitesi&apos;nin deneyimli akademisyenleri, hem akademik birikimleri hem de sektörel deneyimleriyle öğrencilere ilham veren rehberlerdir. Kamu Hukuku ve Özel Hukuk alanındaki duayen hocalarımız, analitik ve etik hukuk bilincini aşılar.
-            </p>
-            <a href="https://www.ozyegin.edu.tr/tr/hukuk-fakultesi/akademik-kadro" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-amber-700 hover:bg-amber-800 text-white font-semibold rounded-full transition-colors w-max">
-              Daha Fazla
-              <ChevronRight className="w-4 h-4" />
-            </a>
-          </div>
-
-        </div>
-      </motion.section>
 
       {/* 7. Sıkça Sorulan Sorular */}
       <section className="relative z-10 w-full bg-slate-50 py-24 border-t border-slate-200">
@@ -398,6 +383,7 @@ export default function LawPage() {
         </div>
       </section>
 
+      <LawTicket />
       <Footer />
     </main>
   );

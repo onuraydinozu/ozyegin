@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Utensils, Globe, ChevronRight, GraduationCap, Building, Plus, Minus } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import AppliedScienceTicket from "@/components/tickets/AppliedScienceTicket";
 import Image from "next/image";
 
 export default function GastronomyPage() {
@@ -366,6 +367,9 @@ export default function GastronomyPage() {
           </div>
         </div>
       </section>
+
+      {/* NEW: Kampüs Ziyaret Bileti / Formu */}
+      <AppliedScienceTicket />
 
       <Footer />
     </main>

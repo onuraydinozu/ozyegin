@@ -10,10 +10,22 @@ import {
   GraduationCap, 
   Award, 
   Plus, 
-  Minus 
+  Minus,
+  Eye,
+  BrainCircuit,
+  HeartPulse,
+  Baby,
+  Globe2,
+  Database,
+  LineChart,
+  Terminal,
+  Stethoscope,
+  Briefcase,
+  Building
 } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import SocialScienceTicket from "@/components/tickets/SocialScienceTicket";
 
 export default function SocialSciencesPage() {
   return (
@@ -298,192 +310,229 @@ export default function SocialSciencesPage() {
         </div>
       </section>
 
-      {/* 5. İstatistikler ve Çalışılan Kurumlar */}
-      <section className="relative z-10 max-w-7xl mx-auto px-6 py-20">
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <span className="text-indigo-600 font-bold text-sm tracking-wide block mb-2 uppercase">Sosyal Bilimler Fakültesi</span>
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">ÖzÜ Mezunları Güçlü Başlıyor</h2>
-          <p className="text-xl text-indigo-800">Öğrencilerimiz mezun olmadan iş hayatına adım atıyor</p>
-        </motion.div>
+      {/* Soft Transition (Light to Dark) */}
+      <div className="w-full h-32 bg-gradient-to-b from-white to-slate-900 pointer-events-none"></div>
 
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={{
-            visible: { transition: { staggerChildren: 0.1 } },
-            hidden: {}
-          }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
-        >
-          {[
-            { value: "%44", label: "Mezuniyet anında veya öncesinde işe başlama", color: "text-indigo-600" },
-            { value: "5 Ay", label: "Mezuniyet sonrası ortalama işe başlama süresi", color: "text-purple-600" },
-            { value: "%12", label: "Yurt dışında çalışan mezun oranı", color: "text-rose-600" },
-            { value: "%37", label: "Lisansüstü eğitimde yurt dışını tercih edenler", color: "text-blue-600" }
-          ].map((stat, idx) => (
-            <motion.div 
-              key={idx}
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } }
-              }}
-              className="bg-white border border-slate-200 rounded-2xl p-6 text-center hover:bg-slate-50 transition-colors shadow-sm"
-            >
-              <div className={`text-5xl font-black mb-2 ${stat.color}`}>{stat.value}</div>
-              <p className="text-slate-600 text-sm">{stat.label}</p>
-            </motion.div>
-          ))}
-        </motion.div>
+      {/* 4. Research & Clinical Career Matrix (Replaces old İstatistikler) */}
+      <section className="relative z-10 w-full py-24 bg-slate-900">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-indigo-400 font-mono text-sm tracking-widest uppercase mb-2 block">CAREER MATRIX</span>
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Sosyal Bilimler Mezunu Ne İş Yapar?</h2>
+            <p className="text-slate-400 max-w-2xl mx-auto">Veriyle desteklenen net istatistikler ve global istihdam haritası.</p>
+          </div>
 
-        <p className="text-xs text-slate-500 text-center mb-16 italic">
-          * Bu oranlar Haziran 2026 itibariyle ulaşılabilmiş son 3 yıl mezunlarımızın verilerine göre hesaplanmıştır.<br/>
-          ** Bu oranlar Haziran 2026 itibariyle ulaşılabilmiş tüm mezunlarımızın verilerine göre hesaplanmıştır.
-        </p>
-
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.6 }}
-        >
-          <h3 className="text-2xl font-bold text-center text-slate-900 mb-8">Mezunlarımızın Çalıştığı Öne Çıkan Kurum ve Kuruluşlar</h3>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+             {/* Path 1 */}
+             <div className="bg-slate-800 border border-slate-700/50 rounded-3xl p-8 hover:border-indigo-500/50 transition-colors">
+                <Stethoscope className="w-10 h-10 text-indigo-400 mb-6" />
+                <h3 className="text-xl font-bold text-white mb-3">Klinik & Akademik Yol</h3>
+                <p className="text-slate-400 text-sm mb-6">Yurt içi ve yurt dışı saygın üniversitelerde klinik psikoloji yüksek lisansı ve doktora (PhD) kabulleri.</p>
+                <div className="w-full bg-slate-800 rounded-full h-2 mb-2"><div className="bg-indigo-500 h-2 rounded-full" style={{width: '37%'}}></div></div>
+                <span className="text-xs font-mono text-indigo-400">%37 Lisansüstü Eğitime Devam</span>
+             </div>
+             {/* Path 2 */}
+             <div className="bg-slate-800 border border-slate-700/50 rounded-3xl p-8 hover:border-emerald-500/50 transition-colors">
+                <Briefcase className="w-10 h-10 text-emerald-400 mb-6" />
+                <h3 className="text-xl font-bold text-white mb-3">Kurumsal, İK & Nöropazarlama</h3>
+                <p className="text-slate-400 text-sm mb-6">Dev şirketlerin İnsan Kaynakları, Kullanıcı Deneyimi (UX Research) ve Tüketici Davranışı departmanları.</p>
+                <div className="w-full bg-slate-800 rounded-full h-2 mb-2"><div className="bg-emerald-500 h-2 rounded-full" style={{width: '44%'}}></div></div>
+                <span className="text-xs font-mono text-emerald-400">%44 Kurumsal İstihdam</span>
+             </div>
+             {/* Path 3 */}
+             <div className="bg-slate-800 border border-slate-700/50 rounded-3xl p-8 hover:border-rose-500/50 transition-colors">
+                <Building className="w-10 h-10 text-rose-400 mb-6" />
+                <h3 className="text-xl font-bold text-white mb-3">Uluslararası Örgütler & NGO</h3>
+                <p className="text-slate-400 text-sm mb-6">Birleşmiş Milletler, AB organları, Think-Tank kuruluşları ve kamu diplomasisi uzmanlığı.</p>
+                <div className="w-full bg-slate-800 rounded-full h-2 mb-2"><div className="bg-rose-500 h-2 rounded-full" style={{width: '19%'}}></div></div>
+                <span className="text-xs font-mono text-rose-400">%19 STK ve Uluslararası Örgüt</span>
+             </div>
+          </div>
           
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            variants={{
-              visible: { transition: { staggerChildren: 0.05 } },
-              hidden: {}
-            }}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mb-16"
-          >
-            {[
-              { name: "Birleşmiş Milletler (UN)", count: 12 },
-              { name: "UNICEF Türkiye", count: 9 },
-              { name: "Koç Holding", count: 18 },
-              { name: "Sabancı Holding", count: 15 },
-              { name: "Eczacıbaşı", count: 11 },
-              { name: "Trendyol", count: 14 },
-              { name: "Unilever", count: 10 },
-              { name: "L'Oréal Türkiye", count: 8 },
-              { name: "Türk Hava Yolları", count: 16 },
-              { name: "Garanti BBVA", count: 13 },
-              { name: "İş Bankası", count: 12 },
-              { name: "Deloitte", count: 9 },
-              { name: "PwC Türkiye", count: 8 },
-              { name: "EY Türkiye", count: 7 },
-              { name: "KPMG", count: 6 },
-              { name: "Danone", count: 5 },
-              { name: "TEGV (Eğitim Gönüllüleri)", count: 8 },
-              { name: "Psikolojik Danışmanlık Merkezleri", count: 24 },
-              { name: "Özel Hastaneler & Klinikler", count: 19 },
-              { name: "Sivil Toplum Kuruluşları (STK)", count: 22 }
-            ].map((company, idx) => (
-              <motion.div 
-                key={idx} 
-                variants={{
-                  hidden: { opacity: 0, scale: 0.9, y: 10 },
-                  visible: { opacity: 1, scale: 1, y: 0, transition: { type: "spring", stiffness: 150 } }
-                }}
-                className="bg-white border border-slate-200 rounded-xl p-4 flex flex-col items-center justify-center text-center hover:bg-indigo-50 transition-colors shadow-sm"
-              >
-                <span className="text-slate-700 font-semibold text-sm mb-2">{company.name}</span>
-                <span className="text-indigo-600 font-black text-xl">{company.count}</span>
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.div>
+          {/* Static Institution Tags */}
+          <div className="flex flex-wrap justify-center gap-3">
+             {["Birleşmiş Milletler (UN)", "UNICEF", "Koç Holding", "Trendyol", "L'Oréal", "Garanti BBVA", "Deloitte", "TEGV", "Klinikler"].map((inst, i) => (
+                <span key={i} className="px-4 py-2 bg-slate-800 border border-slate-700/50 rounded-full text-sm font-mono text-slate-300">{inst}</span>
+             ))}
+          </div>
+        </div>
       </section>
 
-      {/* 6. Fakülte Öne Çıkanlar (3 Column Layout) */}
-      <motion.section 
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-50px" }}
-        transition={{ duration: 0.8 }}
-        className="relative z-10 w-full bg-white py-24 border-t border-slate-200"
-      >
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
-          
-          {/* Card 1: Research Labs */}
-          <div className="flex flex-col h-full">
-            <div className="mb-4">
-              <span className="text-indigo-600 font-bold text-sm tracking-wide block mb-2">Sosyal Bilimler Fakültesi</span>
-              <h2 className="text-[#1A1A1A] font-black text-4xl leading-tight">Psikoloji<br/>Araştırma<br/>Laboratuvarları</h2>
+      {/* 5. Cognitive & Behavioral Data Lab */}
+      <section className="relative w-full py-32 bg-slate-900 border-t border-slate-700/50 overflow-hidden group cursor-crosshair">
+         <div className="absolute inset-0 z-0">
+            {/* Heatmap background representation */}
+            <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-rose-500/10 rounded-full blur-[100px] group-hover:bg-rose-500/20 transition-all duration-700 ease-out"></div>
+            <div className="absolute bottom-1/4 right-1/3 w-64 h-64 bg-amber-500/10 rounded-full blur-[80px] group-hover:bg-amber-500/20 transition-all duration-700 ease-out"></div>
+            <div className="absolute top-1/2 right-1/4 w-80 h-80 bg-blue-500/10 rounded-full blur-[90px] group-hover:bg-blue-500/20 transition-all duration-700 ease-out"></div>
+            <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-overlay"></div>
+         </div>
+         <div className="relative z-10 max-w-7xl mx-auto px-6">
+            <div className="flex flex-col lg:flex-row gap-16 items-center">
+               <div className="lg:w-1/2">
+                  <span className="inline-flex items-center gap-2 px-3 py-1 bg-rose-500/20 border border-rose-500/30 rounded-md text-rose-400 text-xs font-mono tracking-widest uppercase mb-6">
+                     <Eye className="w-4 h-4"/> Eye-Tracking & EEG Paneli
+                  </span>
+                  <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Cognitive & Behavioral Data Lab</h2>
+                  <p className="text-lg text-slate-400 mb-8 leading-relaxed">
+                     İnsan beynini ve davranışını sadece gözlemlemiyor; nörobilimsel veriler, göz izleme (eye-tracking) ve EEG ile ölçerek analiz ediyoruz.
+                  </p>
+                  <div className="space-y-4">
+                     <div className="flex items-start gap-4">
+                        <div className="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center shrink-0">
+                           <BrainCircuit className="w-5 h-5 text-rose-400" />
+                        </div>
+                        <div>
+                           <h4 className="text-white font-bold">Bilişsel Psikoloji & Nörobilim Labı</h4>
+                           <p className="text-sm text-slate-500">Dikkat, bellek ve algı araştırmaları.</p>
+                        </div>
+                     </div>
+                     <div className="flex items-start gap-4">
+                        <div className="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center shrink-0">
+                           <HeartPulse className="w-5 h-5 text-blue-400" />
+                        </div>
+                        <div>
+                           <h4 className="text-white font-bold">ÖZÜ-ÇİFT (Çift ve Aile Terapisi)</h4>
+                           <p className="text-sm text-slate-500">Türkiye'nin en kapsamlı klinik uygulama merkezi.</p>
+                        </div>
+                     </div>
+                     <div className="flex items-start gap-4">
+                        <div className="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center shrink-0">
+                           <Baby className="w-5 h-5 text-amber-400" />
+                        </div>
+                        <div>
+                           <h4 className="text-white font-bold">ÇAM (Çocuk ve Aile Çalışmaları)</h4>
+                           <p className="text-sm text-slate-500">Gelişimsel psikoloji ve ebeveyn-çocuk etkileşimi.</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div className="lg:w-1/2 w-full h-[400px] bg-slate-800 border border-slate-700/50 rounded-3xl p-6 relative overflow-hidden shadow-2xl">
+                  {/* Eye Tracking Simulation UI */}
+                  <div className="absolute top-4 left-4 flex gap-2 z-20">
+                     <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                     <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                     <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                  </div>
+                  <div className="absolute top-4 right-4 text-xs font-mono text-slate-500 z-20">REC 00:14:32</div>
+                  <div className="absolute inset-0 w-full h-full">
+                     <svg className="w-full h-full opacity-30" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        <polyline points="0,50 20,50 25,30 30,70 35,50 100,50" fill="none" stroke="#f43f5e" strokeWidth="1" strokeDasharray="100"/>
+                        <polyline points="0,70 30,70 35,40 40,80 45,70 100,70" fill="none" stroke="#3b82f6" strokeWidth="1" strokeDasharray="100"/>
+                     </svg>
+                     {/* Static heatmap blobs */}
+                     <div className="absolute top-1/4 left-1/3 w-20 h-20 bg-rose-500/40 rounded-full blur-xl"></div>
+                     <div className="absolute top-1/2 right-1/4 w-32 h-32 bg-amber-500/30 rounded-full blur-2xl"></div>
+                     <div className="absolute bottom-1/4 left-1/2 w-24 h-24 bg-blue-500/40 rounded-full blur-xl"></div>
+                  </div>
+               </div>
             </div>
-            <div className="w-full aspect-square md:aspect-[4/3] relative mb-6 overflow-hidden rounded-2xl bg-indigo-50 border border-indigo-100 flex items-center justify-center">
-              <Brain className="w-24 h-24 text-indigo-400" />
-            </div>
-            <p className="text-[#6D6D6D] text-[15px] leading-relaxed mb-8 flex-grow">
-              Gelişim, Bilişsel, Sosyal ve İlişki Araştırmaları Laboratuvarlarımızda lisans öğrencileri henüz eğitimlerinin başında aktif araştırmacı olarak görev alır, veri toplama ve deneysel tasarım deneyimi elde ederler.
-            </p>
-            <a 
-              href="https://www.ozyegin.edu.tr/tr/psikoloji" 
-              target="_blank" 
-              rel="noreferrer" 
-              className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-[#266295] hover:bg-[#1a4569] text-white font-semibold rounded-full transition-colors w-max"
-            >
-              Daha Fazla
-              <ChevronRight className="w-4 h-4" />
-            </a>
-          </div>
+         </div>
+      </section>
 
-          {/* Card 2: Business & Digital Anthropology */}
-          <div className="flex flex-col h-full">
-            <div className="mb-4">
-              <span className="text-indigo-600 font-bold text-sm tracking-wide block mb-2">Sosyal Bilimler Fakültesi</span>
-              <h2 className="text-[#1A1A1A] font-black text-4xl leading-tight">İş & Dijital<br/>Antropoloji<br/>Odak Alanı</h2>
+      {/* 6. Geopolitical Radar */}
+      <section className="relative w-full py-32 bg-slate-800 overflow-hidden">
+         <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-16">
+               <span className="inline-flex items-center gap-2 px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-md text-blue-400 text-xs font-mono tracking-widest uppercase mb-6">
+                  <Globe2 className="w-4 h-4"/> Diplomasi Simülatörü
+               </span>
+               <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Geopolitical Radar & Diplomatic Matrix</h2>
+               <p className="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                  Harita okumaktan öteye geçin. Canlı küresel krizlerin, AB politikalarının ve dış politikanın analiz edildiği strateji merkezine katılın.
+               </p>
             </div>
-            <div className="w-full aspect-square md:aspect-[4/3] relative mb-6 overflow-hidden rounded-2xl bg-purple-50 border border-purple-100 flex items-center justify-center">
-              <Users className="w-24 h-24 text-purple-400" />
-            </div>
-            <p className="text-[#6D6D6D] text-[15px] leading-relaxed mb-8 flex-grow">
-              Türkiye&apos;de bir ilk olan İş Antropolojisi ve Piyasa Etnografisi yaklaşımları ile öğrencilerimiz; kullanıcı deneyimi, insan odaklı tasarım ve kültürel analiz alanlarında yenilikçi bakış açıları kazanmaktadır.
-            </p>
-            <a 
-              href="https://www.ozyegin.edu.tr/tr/antropoloji" 
-              target="_blank" 
-              rel="noreferrer" 
-              className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-[#266295] hover:bg-[#1a4569] text-white font-semibold rounded-full transition-colors w-max"
-            >
-              Daha Fazla
-              <ChevronRight className="w-4 h-4" />
-            </a>
-          </div>
+            
+            <div className="relative w-full h-[500px] border border-slate-700/50 bg-slate-900 rounded-3xl overflow-hidden flex items-center justify-center">
+               <Globe className="w-[800px] h-[800px] text-slate-800/50 absolute" />
+               {/* Nodes */}
+               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+                  <div className="w-8 h-8 bg-blue-600 rounded-full shadow-[0_0_20px_rgba(37,99,235,1)] flex items-center justify-center">
+                     <div className="w-2 h-2 bg-white rounded-full"></div>
+                  </div>
+                  <span className="absolute top-full left-1/2 -translate-x-1/2 mt-2 font-mono text-xs text-blue-400">ISTANBUL_HQ</span>
+               </div>
+               
+               <div className="absolute top-1/4 left-1/3 z-20 group">
+                  <div className="w-4 h-4 bg-purple-500 rounded-full shadow-[0_0_15px_rgba(168,85,247,0.8)] cursor-pointer"></div>
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-slate-900 border border-slate-700 p-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity w-48 text-center pointer-events-none">
+                     <span className="text-purple-400 font-bold text-xs block mb-1">BRÜKSEL (AB)</span>
+                     <span className="text-slate-400 text-[10px]">Avrupa Birliği Araştırmaları ve TÜBİTAK Projeleri.</span>
+                  </div>
+               </div>
 
-          {/* Card 3: Academic Staff */}
-          <div className="flex flex-col h-full">
-            <div className="mb-4">
-              <span className="text-indigo-600 font-bold text-sm tracking-wide block mb-2">Sosyal Bilimler Fakültesi</span>
-              <h2 className="text-[#1A1A1A] font-black text-4xl leading-tight">Akademik<br/>Kadro</h2>
-            </div>
-            <div className="w-full aspect-square md:aspect-[4/3] relative mb-6 overflow-hidden rounded-2xl bg-rose-50 border border-rose-100 flex items-center justify-center">
-              <GraduationCap className="w-24 h-24 text-rose-400" />
-            </div>
-            <p className="text-[#6D6D6D] text-[15px] leading-relaxed mb-8 flex-grow">
-              Dünyanın ve Türkiye&apos;nin en saygın üniversitelerinden doktoralı öğretim üyelerimiz; uluslararası yayınları, fonlanan araştırma projeleri ve öğrenci odaklı yaklaşımıyla geleceğin sosyal bilimcilerine ilham vermektedir.
-            </p>
-            <a 
-              href="https://www.ozyegin.edu.tr/tr/sosyal-bilimler-fakultesi/akademik-kadro" 
-              target="_blank" 
-              rel="noreferrer" 
-              className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-[#266295] hover:bg-[#1a4569] text-white font-semibold rounded-full transition-colors w-max"
-            >
-              Daha Fazla
-              <ChevronRight className="w-4 h-4" />
-            </a>
-          </div>
+               <div className="absolute bottom-1/3 right-1/4 z-20 group">
+                  <div className="w-4 h-4 bg-emerald-500 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.8)] cursor-pointer"></div>
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-slate-900 border border-slate-700 p-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity w-48 text-center pointer-events-none">
+                     <span className="text-emerald-400 font-bold text-xs block mb-1">CENEVRE (BM)</span>
+                     <span className="text-slate-400 text-[10px]">Model UN (MUN) ve Uluslararası Hukuk.</span>
+                  </div>
+               </div>
 
-        </div>
-      </motion.section>
+               <div className="absolute top-1/3 right-1/3 z-20 group">
+                  <div className="w-4 h-4 bg-rose-500 rounded-full shadow-[0_0_15px_rgba(244,63,94,0.8)] cursor-pointer"></div>
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-slate-900 border border-slate-700 p-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity w-48 text-center pointer-events-none">
+                     <span className="text-rose-400 font-bold text-xs block mb-1">WASHINGTON</span>
+                     <span className="text-slate-400 text-[10px]">Güvenlik ve Küresel Politik Ekonomi Analizleri.</span>
+                  </div>
+               </div>
+
+               {/* Static laser streams */}
+               <svg className="absolute inset-0 w-full h-full z-10 pointer-events-none">
+                  <line x1="50%" y1="50%" x2="33.33%" y2="25%" stroke="#a855f7" strokeWidth="2" opacity="0.4" strokeDasharray="4 4" />
+                  <line x1="50%" y1="50%" x2="75%" y2="66.66%" stroke="#10b981" strokeWidth="2" opacity="0.4" strokeDasharray="4 4" />
+                  <line x1="50%" y1="50%" x2="66.66%" y2="33.33%" stroke="#f43f5e" strokeWidth="2" opacity="0.4" strokeDasharray="4 4" />
+               </svg>
+            </div>
+         </div>
+      </section>
+
+      {/* 7. Computational Social Science */}
+      <section className="relative w-full py-32 bg-slate-800 overflow-hidden">
+         <div className="max-w-7xl mx-auto px-6">
+            <div className="flex flex-col lg:flex-row-reverse gap-16 items-center">
+               <div className="lg:w-1/2">
+                  <span className="inline-flex items-center gap-2 px-3 py-1 bg-teal-500/20 border border-teal-500/30 rounded-md text-teal-400 text-xs font-mono tracking-widest uppercase mb-6">
+                     <Database className="w-4 h-4"/> Big Data & AI
+                  </span>
+                  <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Computational Social Science</h2>
+                  <p className="text-lg text-slate-400 mb-8 leading-relaxed">
+                     İnsan davranışını ve toplumu incelerken Python, R, Büyük Veri (Big Data) ve Yapay Zekâ araçlarını kullanın.
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                     <div className="bg-slate-800 border border-slate-700 p-4 rounded-xl">
+                        <LineChart className="w-6 h-6 text-teal-400 mb-3"/>
+                        <h4 className="text-white font-bold text-sm mb-1">Sosyal Veri Madenciliği</h4>
+                        <p className="text-slate-500 text-xs">Sosyal medya analitiği ve algoritmik kamuoyu araştırmaları.</p>
+                     </div>
+                     <div className="bg-slate-800 border border-slate-700 p-4 rounded-xl">
+                        <Terminal className="w-6 h-6 text-indigo-400 mb-3"/>
+                        <h4 className="text-white font-bold text-sm mb-1">İstatistiksel Modeller</h4>
+                        <p className="text-slate-500 text-xs">SPSS, R ve Python ile veri odaklı davranış araştırmaları.</p>
+                     </div>
+                  </div>
+               </div>
+               <div className="lg:w-1/2 w-full h-[400px] bg-slate-950 border border-slate-700/50 rounded-3xl p-6 relative shadow-2xl font-mono text-sm overflow-hidden">
+                  <div className="text-slate-400 mb-4 flex items-center gap-2 border-b border-slate-700/50 pb-2">
+                     <span className="text-teal-400">analyze_society.py</span>
+                  </div>
+                  <pre className="text-slate-300">
+                     <span className="text-purple-400">import</span> pandas <span className="text-purple-400">as</span> pd<br/>
+                     <span className="text-purple-400">import</span> numpy <span className="text-purple-400">as</span> np<br/>
+                     <span className="text-purple-400">from</span> sklearn.cluster <span className="text-purple-400">import</span> KMeans<br/><br/>
+                     <span className="text-slate-500"># Toplumsal eğilimleri makine öğrenmesiyle analiz et</span><br/>
+                     data = pd.read_csv(<span className="text-amber-300">'human_behavior.csv'</span>)<br/>
+                     model = KMeans(n_clusters=<span className="text-blue-400">4</span>)<br/>
+                     predictions = model.fit_predict(data)<br/><br/>
+                     <span className="text-blue-400">print</span>(<span className="text-amber-300">"Toplumsal Segmentasyon Tamamlandı."</span>)
+                  </pre>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      {/* Soft Transition (Dark to Light) */}
+      <div className="w-full h-32 bg-gradient-to-b from-slate-800 to-white pointer-events-none"></div>
 
       {/* 7. Sıkça Sorulan Sorular */}
       <section className="relative z-10 w-full bg-white py-24">
@@ -499,6 +548,7 @@ export default function SocialSciencesPage() {
         </div>
       </section>
 
+      <SocialScienceTicket />
       <Footer />
     </main>
   );

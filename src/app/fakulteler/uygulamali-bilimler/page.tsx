@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Utensils, Hotel, Globe, Award, ChevronRight, GraduationCap, Plus, Minus, Sparkles, ChefHat } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import AppliedScienceTicket from "@/components/tickets/AppliedScienceTicket";
 import Image from "next/image";
 
 export default function UygulamaliBilimlerPage() {
@@ -434,6 +435,9 @@ export default function UygulamaliBilimlerPage() {
           </div>
         </div>
       </section>
+
+      {/* NEW: Kampüs Ziyaret Bileti / Formu */}
+      <AppliedScienceTicket />
 
       <Footer />
     </main>

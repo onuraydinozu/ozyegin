@@ -15,16 +15,31 @@ import {
   Minus, 
   Lightbulb, 
   PieChart, 
-  BarChart3
+  BarChart3,
+  Rocket, ArrowUpRight, Target, Activity, Zap, CreditCard, Network, Coins, Bitcoin, Search
 } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import BusinessTicket from "@/components/tickets/BusinessTicket";
 
 export default function BusinessFacultyPage() {
   return (
-    <main className="bg-slate-50 text-slate-800 font-sans min-h-screen overflow-x-hidden">
+    <main className="bg-slate-50 text-slate-800 font-sans min-h-screen">
       <Header />
       
+      {/* 1. Live Market Ticker (Borsa Bandı) */}
+      <div className="w-full bg-slate-900 border-b border-slate-700/50 py-3 flex overflow-x-auto snap-x snap-mandatory gap-8 px-6 scrollbar-hide text-sm font-mono text-slate-400">
+        <span className="text-emerald-400 font-bold flex items-center gap-2 shrink-0"><ArrowUpRight className="w-4 h-4"/> $OZUBIZ ▲ +24%</span>
+        <span className="shrink-0">|</span>
+        <span className="text-blue-400 font-bold shrink-0">STARTUP_FUNDING: $12.5M</span>
+        <span className="shrink-0">|</span>
+        <span className="text-amber-400 font-bold shrink-0">BIG4_RECRUITMENT: %94</span>
+        <span className="shrink-0">|</span>
+        <span className="text-sky-400 font-bold shrink-0">GLOBAL_EXCHANGE: 42 COUNTRIES</span>
+        <span className="shrink-0">|</span>
+        <span className="text-purple-400 font-bold shrink-0">ALUMNI_NETWORK: 15,000+</span>
+      </div>
+
       {/* Hero Section */}
       <div className="relative min-h-[90vh] md:min-h-screen w-full overflow-hidden flex flex-col justify-center">
         {/* Dynamic Background (Özyeğin Business gradient) */}
@@ -208,204 +223,178 @@ export default function BusinessFacultyPage() {
         </div>
       </section>
 
-      {/* 4. Mezunlarımız & Bir Bölüm Üç Açı */}
-      <section className="relative z-10 w-full bg-blue-50/40 border-y border-slate-200 py-24">
+      {/* Pitch Deck & Girişimcilik */}
+      <section className="relative z-10 w-full py-24 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">Mezunlarımız</h2>
-            <div className="w-20 h-1 bg-blue-600 mx-auto rounded-full"></div>
+            <span className="text-blue-600 font-bold text-sm tracking-widest uppercase mb-2 block">STARTUP ECOSYSTEM</span>
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6">Pitch Deck & Kuluçka</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto">Sadece vaka analizi yapmıyor, doğrudan yatırımcı karşısına çıkıyorsunuz.</p>
           </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
-              <p>
-                Özyeğin Üniversitesi İşletme Fakültesi mezunları, dünyanın en büyük danışmanlık firmalarından teknoloji devlerine, finans ve bankacılık sektöründen uluslararası hızlı tüketim ürünleri şirketlerine kadar geniş bir yelpazede üst düzey sorumluluklar üstlenmektedir.
-              </p>
-              <p>
-                Sektör odaklı vaka analizleri, staj olanakları ve uzman akademisyenlerimiz eşliğinde gerçekleştirilen projeler, mezunlarımızın iş hayatına rakiplerinin adımlarça önünde başlamasını sağlamaktadır.
-              </p>
+
+          {/* Native Horizontal Scroll for Pitch Cards */}
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-8 px-6 pb-6 scrollbar-hide">
+             {/* Card 1 */}
+             <div className="w-[300px] shrink-0 bg-white border border-slate-200 rounded-3xl p-8 shadow-xl hover:-translate-y-2 transition-transform snap-center">
+                <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6"><Lightbulb className="w-6 h-6"/></div>
+                <h3 className="text-xl font-black text-slate-900 mb-2">Girişimcilik Merkezi</h3>
+                <p className="text-slate-600 text-sm">Fikir doğrulama, prototipleme ve erken aşama (seed) yatırım destekleriyle fikrini ürüne dönüştür.</p>
+             </div>
+             {/* Card 2 */}
+             <div className="w-[300px] shrink-0 bg-white border border-slate-200 rounded-3xl p-8 shadow-xl hover:-translate-y-2 transition-transform snap-center">
+                <div className="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center mb-6"><BarChart3 className="w-6 h-6"/></div>
+                <h3 className="text-xl font-black text-slate-900 mb-2">Finans & Analitik</h3>
+                <p className="text-slate-600 text-sm">Şirket değerlemesi, finansal modelleme ve yatırımcı görüşmelerinde elini güçlendirecek veri setleri.</p>
+             </div>
+             {/* Card 3 */}
+             <div className="w-[300px] shrink-0 bg-white border border-slate-200 rounded-3xl p-8 shadow-xl hover:-translate-y-2 transition-transform snap-center">
+                <div className="w-12 h-12 bg-teal-100 text-teal-600 rounded-xl flex items-center justify-center mb-6"><Target className="w-6 h-6"/></div>
+                <h3 className="text-xl font-black text-slate-900 mb-2">Dijital Pazarlama</h3>
+                <p className="text-slate-600 text-sm">Growth Hacking teknikleri, SEO, kullanıcı kazanımı ve pazar penetrasyon stratejileri.</p>
+             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Soft Transition (Light to Dark) */}
+      <div className="w-full h-32 bg-gradient-to-b from-white to-slate-950 pointer-events-none"></div>
+
+      {/* 4. Finviz Style Heatmap */}
+      <section className="relative z-10 w-full bg-slate-950 py-24 border-y border-slate-700/50">
+         <div className="max-w-7xl mx-auto px-6">
+            <div className="mb-12">
+               <h2 className="text-3xl font-black text-white mb-2">Uzmanlık Alanları & Piyasa Derinliği</h2>
+               <p className="text-slate-400">S&P 500 ısı haritalarından ilham alınan etkileşimli alan matrisi.</p>
             </div>
             
-            <div className="bg-gradient-to-br from-white to-slate-50 border border-slate-200 rounded-3xl p-8 shadow-xl relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-[50px] group-hover:bg-red-500/20 transition-all"></div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">Bir Bölüm Üç Açı</h3>
-              <p className="text-slate-500 mb-8">
-                Lisans bölümlerimizi akademisyenlerimizin, mezunlarımızın ve öğrencilerimizin deneyimlerinden yola çıkarak tanıtan YouTube video serimize buradan erişebilirsiniz.
-              </p>
-              <a href="https://youtube.com/playlist?list=PLKzTz6QQRYz3XV0HyCjcrTS_BXrKp_NFc" target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 px-6 py-3 bg-[#FF0000] hover:bg-red-600 text-white font-bold rounded-xl transition-all shadow-lg shadow-red-500/30">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
-                Seriyi İzle
-              </a>
+            <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-2 h-auto md:h-[600px]">
+               {/* Box 1 (Large) */}
+               <div className="md:col-span-2 md:row-span-2 h-48 md:h-auto bg-emerald-500/20 border border-emerald-500/30 hover:bg-emerald-500/40 transition-colors p-4 relative group flex flex-col cursor-pointer">
+                  <div className="flex justify-between items-start mb-auto">
+                     <span className="font-mono font-bold text-emerald-300">FİNANS (FIN)</span>
+                     <span className="font-mono text-emerald-400 text-sm">+8.4%</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2 mt-4">Uluslararası Finans & Yatırım</h3>
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity absolute inset-0 bg-emerald-600/95 p-6 flex flex-col justify-center items-center text-center z-10">
+                     <Coins className="w-12 h-12 text-white mb-4"/>
+                     <h4 className="font-bold text-xl text-white mb-2">Finans Sektöründe Yüksek Talep</h4>
+                     <p className="text-emerald-100 text-sm">Mezunlarımızın %40'ı yatırım bankacılığı, portföy yönetimi ve özel fonlarda kariyerine başlamaktadır.</p>
+                  </div>
+               </div>
+               
+               {/* Box 2 (Medium) */}
+               <div className="md:col-span-1 md:row-span-2 h-48 md:h-auto bg-blue-500/20 border border-blue-500/30 hover:bg-blue-500/40 transition-colors p-4 relative group flex flex-col cursor-pointer">
+                  <div className="flex justify-between items-start mb-auto">
+                     <span className="font-mono font-bold text-blue-300">MKTG</span>
+                     <span className="font-mono text-blue-400 text-sm">+5.2%</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mt-4">Pazarlama</h3>
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity absolute inset-0 bg-blue-600/95 p-4 flex flex-col justify-center items-center text-center z-10">
+                     <p className="text-blue-100 text-sm font-medium">Dijital ajanslar ve FMCG devlerinde marka yönetimi liderliği.</p>
+                  </div>
+               </div>
+
+               {/* Box 3 (Small) */}
+               <div className="md:col-span-1 md:row-span-1 h-32 md:h-auto bg-red-500/20 border border-red-500/30 hover:bg-red-500/40 transition-colors p-4 relative group flex flex-col cursor-pointer">
+                  <div className="flex justify-between items-start mb-auto">
+                     <span className="font-mono font-bold text-red-300">ENT</span>
+                     <span className="font-mono text-red-400 text-sm">-1.2%</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-white mt-2">Girişimcilik</h3>
+               </div>
+               
+               {/* Box 4 (Small) */}
+               <div className="md:col-span-1 md:row-span-1 h-32 md:h-auto bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/30 transition-colors p-4 relative group flex flex-col cursor-pointer">
+                  <div className="flex justify-between items-start mb-auto">
+                     <span className="font-mono font-bold text-emerald-300">MIS</span>
+                     <span className="font-mono text-emerald-400 text-sm">+4.1%</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-white mt-2">Yönetim Bilişim</h3>
+               </div>
+
+               {/* Box 5 (Medium/Wide) */}
+               <div className="md:col-span-2 md:row-span-1 h-40 md:h-auto bg-purple-500/20 border border-purple-500/30 hover:bg-purple-500/40 transition-colors p-4 relative group flex flex-col cursor-pointer">
+                  <div className="flex justify-between items-start mb-auto">
+                     <span className="font-mono font-bold text-purple-300">IBUS</span>
+                     <span className="font-mono text-purple-400 text-sm">+6.7%</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mt-4">Uluslararası Ticaret</h3>
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity absolute inset-0 bg-purple-600/95 p-4 flex flex-col justify-center items-center text-center z-10">
+                     <p className="text-purple-100 text-sm font-medium">Global tedarik zinciri ve lojistik devlerinde yönetim pozisyonları.</p>
+                  </div>
+               </div>
+
+               {/* Box 6 (Wide) */}
+               <div className="md:col-span-2 md:row-span-1 h-32 md:h-auto bg-slate-700/50 border border-slate-600 hover:bg-slate-600 transition-colors p-4 relative group flex flex-col cursor-pointer">
+                  <div className="flex justify-between items-start mb-auto">
+                     <span className="font-mono font-bold text-slate-300">ECON</span>
+                     <span className="font-mono text-slate-400 text-sm">0.0%</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mt-4">Ekonomi Politikaları</h3>
+               </div>
             </div>
-          </div>
-        </div>
+         </div>
       </section>
 
-      {/* 5. İstatistikler ve Çalışılan Kurumlar */}
-      <section className="relative z-10 max-w-7xl mx-auto px-6 py-20">
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">ÖzÜ İşletme Mezunları Güçlü Başlıyor</h2>
-          <p className="text-xl text-blue-700">Öğrencilerimiz henüz mezun olmadan küresel iş dünyasında kariyerlerine başlıyor</p>
-        </motion.div>
+      {/* Soft Transition (Dark to Light) */}
+      <div className="w-full h-32 bg-gradient-to-b from-slate-950 to-slate-50 pointer-events-none"></div>
 
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={{
-            visible: { transition: { staggerChildren: 0.1 } },
-            hidden: {}
-          }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
-        >
-          {[
-            { value: "%52", label: "Mezuniyet anında veya öncesinde işe başlama", color: "text-blue-600" },
-            { value: "4 Ay", label: "Mezuniyet sonrası ortalama işe başlama süresi", color: "text-indigo-600" },
-            { value: "%18", label: "Yurt dışında çalışan mezun oranı", color: "text-sky-600" },
-            { value: "%35", label: "Lisansüstü eğitimde yurt dışını tercih edenler", color: "text-teal-600" }
-          ].map((stat, idx) => (
-            <motion.div 
-              key={idx}
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } }
-              }}
-              className="bg-white border border-slate-200 rounded-2xl p-6 text-center hover:bg-slate-50 transition-colors shadow-sm"
-            >
-              <div className={`text-5xl font-black mb-2 ${stat.color}`}>{stat.value}</div>
-              <p className="text-slate-600 text-sm">{stat.label}</p>
-            </motion.div>
-          ))}
-        </motion.div>
-        
-        <p className="text-xs text-slate-500 text-center mb-16 italic">
-          * Bu oranlar Haziran 2026 itibariyle ulaşılabilmiş son 3 yıl mezunlarımızın verilerine göre hesaplanmıştır.<br/>
-          ** Bu oranlar Haziran 2026 itibariyle ulaşılabilmiş tüm mezunlarımızın verilerine göre hesaplanmıştır.
-        </p>
+      {/* 5. Global Business Network */}
+      <section className="relative z-10 w-full bg-slate-50 py-32 overflow-hidden border-b border-slate-200">
+         <div className="max-w-7xl mx-auto px-6">
+            <div className="flex flex-col lg:flex-row items-center gap-16">
+               <div className="lg:w-1/2 relative h-[500px] w-full flex items-center justify-center">
+                  <Globe className="w-96 h-96 text-blue-100 absolute opacity-50" />
+                  <div className="relative w-full max-w-sm aspect-square">
+                     {/* Center Node (London / Wall Street) */}
+                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-slate-950 rounded-full border-4 border-blue-500 shadow-[0_0_30px_rgba(59,130,246,0.5)] flex items-center justify-center z-30">
+                        <Globe className="w-10 h-10 text-blue-400" />
+                     </div>
 
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-        >
-          <h3 className="text-2xl font-bold text-center text-slate-900 mb-8">Mezunlarımızın Çalıştığı Önde Gelen Kurumlar</h3>
-          
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={{
-              visible: { transition: { staggerChildren: 0.04 } },
-              hidden: {}
-            }}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
-          >
-            {[
-              { name: "PwC", count: 94 },
-              { name: "Deloitte", count: 88 },
-              { name: "EY (Ernst & Young)", count: 82 },
-              { name: "KPMG", count: 75 },
-              { name: "Unilever", count: 62 },
-              { name: "Procter & Gamble", count: 54 },
-              { name: "Garanti BBVA", count: 51 },
-              { name: "Akbank", count: 48 },
-              { name: "Trendyol", count: 45 },
-              { name: "Yapı Kredi", count: 42 },
-              { name: "L'Oréal", count: 38 },
-              { name: "Mercedes-Benz", count: 35 },
-              { name: "McKinsey & Company", count: 28 },
-              { name: "Google", count: 24 },
-              { name: "Amazon", count: 22 }
-            ].map((company, idx) => (
-              <motion.div 
-                key={idx} 
-                variants={{
-                  hidden: { opacity: 0, scale: 0.9, y: 10 },
-                  visible: { opacity: 1, scale: 1, y: 0, transition: { type: "spring", stiffness: 150 } }
-                }}
-                className="bg-white border border-slate-200 rounded-xl p-4 flex flex-col items-center justify-center text-center hover:bg-blue-50 transition-colors shadow-sm"
-              >
-                <span className="text-slate-700 font-semibold text-sm mb-2">{company.name}</span>
-                <span className="text-blue-600 font-black text-xl">{company.count}</span>
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.div>
+                     {/* Connection Lines & Nodes (Static to avoid lag) */}
+                     <svg className="absolute inset-0 w-full h-full pointer-events-none z-10">
+                        <line x1="50%" y1="50%" x2="20%" y2="20%" stroke="#cbd5e1" strokeWidth="1" strokeDasharray="4 4" />
+                        <line x1="50%" y1="50%" x2="80%" y2="30%" stroke="#cbd5e1" strokeWidth="1" strokeDasharray="4 4" />
+                        <line x1="50%" y1="50%" x2="70%" y2="80%" stroke="#cbd5e1" strokeWidth="1" strokeDasharray="4 4" />
+                     </svg>
+                     
+                     {/* Node 1 */}
+                     <div className="absolute top-[20%] left-[10%] w-3 h-3 bg-emerald-500 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.8)] z-20"></div>
+                     <span className="absolute top-[20%] left-[10%] -translate-x-1/2 -mt-5 font-bold text-slate-500 text-xs z-20">NEW YORK</span>
+                     
+                     {/* Node 2 */}
+                     <div className="absolute top-[30%] left-[80%] w-3 h-3 bg-red-500 rounded-full shadow-[0_0_15px_rgba(239,68,68,0.8)] z-20"></div>
+                     <span className="absolute top-[30%] left-[80%] -translate-x-1/2 -mt-5 font-bold text-slate-500 text-xs z-20">LONDON</span>
+
+                     {/* Node 3 */}
+                     <div className="absolute top-[80%] left-[70%] w-3 h-3 bg-amber-500 rounded-full shadow-[0_0_15px_rgba(245,158,11,0.8)] z-20"></div>
+                     <span className="absolute top-[80%] left-[70%] -translate-x-1/2 mt-4 font-bold text-slate-500 text-xs z-20">SINGAPORE</span>
+                  </div>
+               </div>
+
+               <div className="lg:w-1/2">
+                  <span className="text-blue-600 font-bold text-sm tracking-widest uppercase mb-4 block">KÜRESEL AĞ</span>
+                  <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6">Global Exchange & Network Bağlantıları</h2>
+                  <p className="text-lg text-slate-600 mb-8 leading-relaxed">ÖzÜ İşletme, seni İstanbul'a hapsetmez. New York'tan Singapur'a, Londra'dan Frankfurt'a uzanan devasa bir uluslararası ağın parçası olursun.</p>
+                  
+                  <div className="space-y-4">
+                     <div className="flex items-center gap-4 bg-white p-4 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="w-10 h-10 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center shrink-0"><Network className="w-5 h-5"/></div>
+                        <div><h4 className="font-bold text-slate-900">42 Ülkede Exchange Partneri</h4></div>
+                     </div>
+                     <div className="flex items-center gap-4 bg-white p-4 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="w-10 h-10 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center shrink-0"><Globe className="w-5 h-5"/></div>
+                        <div><h4 className="font-bold text-slate-900">Erasmus+ ve Küresel Stajlar</h4></div>
+                     </div>
+                     <div className="flex items-center gap-4 bg-white p-4 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="w-10 h-10 bg-sky-50 text-sky-600 rounded-full flex items-center justify-center shrink-0"><Building2 className="w-5 h-5"/></div>
+                        <div><h4 className="font-bold text-slate-900">Çokuluslu Şirketlerde İstihdam Garantisi</h4></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
       </section>
-
-      {/* 6. Fakülte Öne Çıkanlar (3 Columns Layout) */}
-      <motion.section 
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.8 }}
-        className="relative z-10 w-full bg-white py-24 border-t border-slate-200"
-      >
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
-          
-          {/* Card 1: Flexible Curriculum & Dual Major */}
-          <div className="flex flex-col h-full">
-            <div className="mb-4">
-              <span className="text-blue-700 font-bold text-sm tracking-wide block mb-2">İşletme Fakültesi</span>
-              <h2 className="text-[#1A1A1A] font-black text-4xl leading-tight">Esnek Müfredat & Çift Anadal</h2>
-            </div>
-            <div className="w-full aspect-square md:aspect-[4/3] relative mb-6 overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl flex items-center justify-center p-6 border border-blue-100">
-              <PieChart className="w-28 h-28 text-blue-600" />
-            </div>
-            <p className="text-[#6D6D6D] text-[15px] leading-relaxed mb-8 flex-grow">
-              Öğrencilerimiz geniş seçmeli ders havuzumuz sayesinde uzmanlaşmak istedikleri finans, pazarlama, veri analitiği, dijital dönüşüm ve sürdürülebilirlik alanlarında dersler seçerek kendilerine özel akademik kariyer rotası çizebilir, Çift Anadal ve Yandal imkânlarıyla donanımlarını katlayabilirler.
-            </p>
-            <a href="https://www.ozyegin.edu.tr/tr/isletme-fakultesi/cift-anadal-ve-yandal" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-full transition-colors w-max">
-              Daha Fazla
-              <ChevronRight className="w-4 h-4" />
-            </a>
-          </div>
-
-          {/* Card 2: Entrepreneurship & Innovation */}
-          <div className="flex flex-col h-full">
-            <div className="mb-4">
-              <span className="text-blue-700 font-bold text-sm tracking-wide block mb-2">İşletme Fakültesi</span>
-              <h2 className="text-[#1A1A1A] font-black text-4xl leading-tight">Girişimcilik Merkezleri</h2>
-            </div>
-            <div className="w-full aspect-square md:aspect-[4/3] relative mb-6 overflow-hidden bg-gradient-to-br from-indigo-50 to-teal-100 rounded-2xl flex items-center justify-center p-6 border border-indigo-100">
-              <Lightbulb className="w-28 h-28 text-indigo-600" />
-            </div>
-            <p className="text-[#6D6D6D] text-[15px] leading-relaxed mb-8 flex-grow">
-              Türkiye’nin önde gelen girişimci üniversitesi vizyonuyla, öğrencilerimize kuluçka merkezlerimiz, mentorluk destekleri ve yatırımcı ağları ile fikirlerini başarılı şirketlere dönüştürme fırsatı sunuyoruz. Öğrencilerimiz henüz okurken kendi girişimlerini hayata geçirebiliyor.
-            </p>
-            <a href="https://www.ozyegin.edu.tr/tr/girisimcilik-merkezi" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-full transition-colors w-max">
-              Daha Fazla
-              <ChevronRight className="w-4 h-4" />
-            </a>
-          </div>
-
-          {/* Card 3: World Class Faculty */}
-          <div className="flex flex-col h-full">
-            <div className="mb-4">
-              <span className="text-blue-700 font-bold text-sm tracking-wide block mb-2">İşletme Fakültesi</span>
-              <h2 className="text-[#1A1A1A] font-black text-4xl leading-tight">Akademik Kadro</h2>
-            </div>
-            <div className="w-full aspect-square md:aspect-[4/3] relative mb-6 overflow-hidden bg-gradient-to-br from-slate-100 to-blue-100 rounded-2xl flex items-center justify-center p-6 border border-slate-200">
-              <GraduationCap className="w-28 h-28 text-slate-600" />
-            </div>
-            <p className="text-[#6D6D6D] text-[15px] leading-relaxed mb-8 flex-grow">
-              Dünyanın en seçkin üniversitelerinden doktora derecesine sahip, uluslararası literatüre yön veren yayınlar gerçekleştiren ve iş dünyasında fiilen danışmanlık yapan saygın akademisyen kadromuz, öğrencilerimize rehberlik eder ve onların analitik bakış açılarını geliştirir.
-            </p>
-            <a href="https://www.ozyegin.edu.tr/tr/isletme-fakultesi/akademik-kadro" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-full transition-colors w-max">
-              Daha Fazla
-              <ChevronRight className="w-4 h-4" />
-            </a>
-          </div>
-
-        </div>
-      </motion.section>
 
       {/* Department Heads Testimonials */}
       <section className="relative z-10 max-w-7xl mx-auto px-6 py-20 border-t border-slate-200">
@@ -469,6 +458,7 @@ export default function BusinessFacultyPage() {
         </div>
       </section>
 
+      <BusinessTicket />
       <Footer />
     </main>
   );

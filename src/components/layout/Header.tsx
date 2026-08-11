@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Search, Menu } from "lucide-react";
+import { Search, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -59,6 +60,8 @@ export default function Header() {
           </div>
 
           <Link href="/taban-puanlar" className="text-[12px] font-bold tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">TABAN PUANLAR</Link>
+          <Link href="/veli-portali" className="text-[12px] font-bold tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">VELİ PORTALI</Link>
+          <Link href="/spor-merkezi" className="text-[12px] font-bold tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">SPOR MERKEZİ</Link>
           <Link href="/ucretler" className="text-[12px] font-bold tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">ÜCRETLER</Link>
           <Link href="/yurtlar" className="text-[12px] font-bold tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">YURTLAR</Link>
           <Link href="/burslar" className="text-[12px] font-bold tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">BURSLAR</Link>
@@ -81,11 +84,54 @@ export default function Header() {
         </div>
 
         {/* Mobile Menu Toggle */}
-        <button className="lg:hidden text-slate-800 p-2 hover:bg-slate-100 rounded-lg transition-colors">
-          <Menu className="w-6 h-6" />
+        <button 
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="lg:hidden text-slate-800 p-2 hover:bg-slate-100 rounded-lg transition-colors"
+        >
+          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
         
       </div>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-slate-200 shadow-2xl max-h-[calc(100vh-80px)] overflow-y-auto z-50">
+          <nav className="flex flex-col py-6 px-6 gap-6">
+            <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-bold tracking-widest text-slate-800 hover:text-[#DF1934] transition-colors border-b border-slate-100 pb-2">AKADEMİK BİRİMLER</Link>
+            
+            <div className="flex flex-col gap-3">
+              <span className="text-[14px] font-bold tracking-widest text-slate-800 border-b border-slate-100 pb-2">FAKÜLTELER</span>
+              <div className="flex flex-col gap-3 pl-4">
+                <Link href="/fakulteler/isletme" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-medium text-slate-600 hover:text-[#DF1934]">İşletme Fakültesi</Link>
+                <Link href="/fakulteler/muhendislik" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-medium text-slate-600 hover:text-[#DF1934]">Mühendislik Fakültesi</Link>
+                <Link href="/fakulteler/sosyal-bilimler" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-medium text-slate-600 hover:text-[#DF1934]">Sosyal Bilimler Fakültesi</Link>
+                <Link href="/fakulteler/havacilik" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-medium text-slate-600 hover:text-[#DF1934]">Havacılık ve Uzay Bilimleri Fakültesi</Link>
+                <Link href="/fakulteler/hukuk" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-medium text-slate-600 hover:text-[#DF1934]">Hukuk Fakültesi</Link>
+                <Link href="/fakulteler/mimarlik-ve-tasarim" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-medium text-slate-600 hover:text-[#DF1934]">Mimarlık ve Tasarım Fakültesi</Link>
+                <Link href="/fakulteler/uygulamali-bilimler" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-medium text-slate-600 hover:text-[#DF1934]">Uygulamalı Bilimler Fakültesi</Link>
+              </div>
+            </div>
+
+            <Link href="/taban-puanlar" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-bold tracking-widest text-slate-800 hover:text-[#DF1934] transition-colors border-b border-slate-100 pb-2">TABAN PUANLAR</Link>
+            <Link href="/veli-portali" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-bold tracking-widest text-slate-800 hover:text-[#DF1934] transition-colors border-b border-slate-100 pb-2">VELİ PORTALI</Link>
+            <Link href="/spor-merkezi" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-bold tracking-widest text-slate-800 hover:text-[#DF1934] transition-colors border-b border-slate-100 pb-2">SPOR MERKEZİ</Link>
+            <Link href="/ucretler" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-bold tracking-widest text-slate-800 hover:text-[#DF1934] transition-colors border-b border-slate-100 pb-2">ÜCRETLER</Link>
+            <Link href="/yurtlar" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-bold tracking-widest text-slate-800 hover:text-[#DF1934] transition-colors border-b border-slate-100 pb-2">YURTLAR</Link>
+            <Link href="/burslar" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-bold tracking-widest text-slate-800 hover:text-[#DF1934] transition-colors border-b border-slate-100 pb-2">BURSLAR</Link>
+            
+            <div className="pt-4 mt-2">
+              <a 
+                href="https://aday.ozyegin.edu.tr/" 
+                target="_blank" 
+                rel="noreferrer"
+                className="block text-center px-6 py-4 bg-[#DF1934] hover:bg-[#c4152d] text-white text-[14px] font-bold tracking-widest rounded-xl transition-all shadow-md shadow-red-500/20"
+              >
+                TERCİH VE TANITIM
+              </a>
+            </div>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

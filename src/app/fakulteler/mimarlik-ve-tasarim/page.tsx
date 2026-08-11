@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { 
   DraftingCompass, 
@@ -18,8 +19,75 @@ import {
 } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import ArchitectureTicket from "@/components/tickets/ArchitectureTicket";
 
 export default function ArchitectureAndDesignPage() {
+  const [activeTab, setActiveTab] = useState(0);
+
+  const departmentsData = [
+    {
+      id: "mimarlik",
+      title: "Mimarlık",
+      icon: <Building2 className="w-5 h-5" />,
+      colorCode: "bg-amber-500",
+      textColor: "text-amber-500",
+      borderColor: "border-amber-500/50",
+      hoverBg: "hover:bg-amber-500/10",
+      vibe: "Parametrik tasarım, dijital modelleme ve iklim odaklı sürdürülebilir mimari.",
+      badges: [
+        { title: "MİAK Akreditasyonu", desc: "Ulusal Mimarlık Akreditasyon Kurulu (MİAK) onaylı eğitim standardı." },
+        { title: "LEED Gold Kampüs", desc: "Türkiye'nin ilk LEED Gold sertifikalı kampüsünde bizzat yeşil bina ve pasif iklimlendirme deneyimi." },
+        { title: "Stüdyo Odak Noktası", desc: "1. sınıftan itibaren her dönem gerçek ölçekli mimari proje stüdyoları." }
+      ],
+      tech: ["Rhino", "Grasshopper", "Revit (BIM)", "V-Ray", "Enscape"]
+    },
+    {
+      id: "ic-mimarlik",
+      title: "İç Mimarlık",
+      icon: <Layout className="w-5 h-5" />,
+      colorCode: "bg-orange-500",
+      textColor: "text-orange-500",
+      borderColor: "border-orange-500/50",
+      hoverBg: "hover:bg-orange-500/10",
+      vibe: "Sadece mobilya yerleşimi değil; insan odaklı mekan deneyimi, aydınlatma, akustik ve mekansal psikoloji.",
+      badges: [
+        { title: "Mekan Deneyimi Lab", desc: "Akustik, doğal/yapay aydınlatma simülasyonları ve malzeme stüdyoları." },
+        { title: "Sürdürülebilir İç Mekan", desc: "Biyomateryal ve dönüştürülebilir malzeme veritabanı." }
+      ],
+      tech: ["AutoCAD", "3ds Max", "SketchUp", "Corona Render", "Photoshop"]
+    },
+    {
+      id: "endustriyel",
+      title: "Endüstriyel Tasarım",
+      icon: <Box className="w-5 h-5" />,
+      colorCode: "bg-rose-500",
+      textColor: "text-rose-500",
+      borderColor: "border-rose-500/50",
+      hoverBg: "hover:bg-rose-500/10",
+      vibe: "Ürün prototipleme, nesnelerin interneti (IoT) destekli akıllı ürünler ve kullanıcı odaklı ürün geliştirme.",
+      badges: [
+        { title: "FabLab İstanbul Entegrasyonu", desc: "Doğrudan ürün prototipinin fiziksel olarak üretildiği atölye altyapısı." },
+        { title: "Sanayi İş Birlikleri", desc: "Arçelik, Vestel, Paşabahçe ile yürütülen stüdyo projeleri ve iF Design / Red Dot ödülleri." }
+      ],
+      tech: ["SolidWorks", "Fusion 360", "KeyShot", "Rhino 3D"]
+    },
+    {
+      id: "iletisim",
+      title: "İletişim Tasarımı",
+      icon: <Palette className="w-5 h-5" />,
+      colorCode: "bg-purple-500",
+      textColor: "text-purple-500",
+      borderColor: "border-purple-500/50",
+      hoverBg: "hover:bg-purple-500/10",
+      vibe: "UI/UX, dijital medya, hareketli grafikler, etkileşimli medya ve yapay zeka destekli görsel iletişim.",
+      badges: [
+        { title: "Digital Media & UX Lab", desc: "Kullanıcı testi, göz izleme (Eye-tracking) ile arayüz analizleri." },
+        { title: "Yeni Nesil Medya & Üretken AI", desc: "Midjourney, Stable Diffusion, Figma ve Unreal Engine ile dijital içerik üretimi." }
+      ],
+      tech: ["Figma", "After Effects", "Illustrator", "Cinema 4D", "Unreal Engine"]
+    }
+  ];
+
   return (
     <main className="bg-slate-50 text-slate-800 font-sans min-h-screen">
       <Header />
@@ -353,62 +421,90 @@ export default function ArchitectureAndDesignPage() {
         </motion.div>
       </section>
 
-      {/* 6. Lisans Bölümlerimiz Grid */}
-      <section className="relative z-10 w-full bg-slate-950 text-white py-24">
+      {/* Soft Transition (Light to Dark) */}
+      <div className="w-full h-32 bg-gradient-to-b from-white to-slate-900 pointer-events-none"></div>
+
+      {/* 6. Tasarım Stüdyoları Hub'ı */}
+      <section className="relative z-10 w-full bg-slate-900 text-white py-24 min-h-[800px]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-amber-400 font-bold text-sm uppercase tracking-widest block mb-2">Akademik Programlar</span>
-            <h2 className="text-3xl md:text-5xl font-black">Lisans Bölümlerimiz</h2>
-            <div className="w-20 h-1 bg-amber-500 mx-auto mt-4 rounded-full"></div>
+            <span className="text-amber-400 font-bold text-sm uppercase tracking-widest block mb-4">Tasarım Stüdyoları Hub'ı</span>
+            <h2 className="text-3xl md:text-5xl font-black mb-12">4 Disiplin, Tek Yaratıcı Ekosistem</h2>
+            
+            {/* Pill Tabs */}
+            <div className="flex flex-wrap justify-center gap-3">
+              {departmentsData.map((dept, idx) => (
+                <button
+                  key={dept.id}
+                  onClick={() => setActiveTab(idx)}
+                  className={`flex items-center gap-2 px-6 py-3 rounded-full text-sm md:text-base font-bold transition-all duration-300 border ${
+                    activeTab === idx 
+                      ? `${dept.borderColor} bg-slate-800 ${dept.textColor} shadow-[0_0_20px_rgba(0,0,0,0.3)] scale-105` 
+                      : `border-slate-800 text-slate-400 hover:text-slate-200 hover:border-slate-600 ${dept.hoverBg}`
+                  }`}
+                >
+                  {dept.icon}
+                  {dept.title}
+                </button>
+              ))}
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-slate-900/80 border border-slate-800 rounded-3xl p-8 hover:border-amber-500/50 transition-all group">
-              <Ruler className="w-12 h-12 text-amber-400 mb-6 group-hover:scale-110 transition-transform" />
-              <h3 className="text-2xl font-bold mb-3 text-white">Mimarlık (TR / EN)</h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Sürdürülebilirlik, ekolojik tasarım ve bütünleşik yapı teknolojileri odaklı MiAK akredite lisans programı.
-              </p>
-              <a href="https://www.ozyegin.edu.tr/tr/mimarlik" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-amber-400 font-semibold text-sm hover:text-amber-300">
-                Detaylı Bilgi <ChevronRight className="w-4 h-4" />
-              </a>
+          {/* Dynamic Content Area */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            {/* Left Column: Vibe & Badges */}
+            <div className="lg:col-span-8 bg-slate-800/40 border border-slate-700/50 rounded-3xl p-8 md:p-10">
+               <div className="mb-10">
+                 <h3 className={`text-3xl md:text-4xl font-black mb-4 ${departmentsData[activeTab].textColor}`}>
+                   {departmentsData[activeTab].title}
+                 </h3>
+                 <p className="text-slate-300 text-lg leading-relaxed">
+                   {departmentsData[activeTab].vibe}
+                 </p>
+               </div>
+
+               <div className="space-y-4">
+                 {departmentsData[activeTab].badges.map((badge, bIdx) => (
+                   <div key={bIdx} className="flex gap-4 p-5 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 transition-colors">
+                     <div className={`mt-1 flex-shrink-0 w-10 h-10 rounded-full ${departmentsData[activeTab].colorCode}/10 flex items-center justify-center border ${departmentsData[activeTab].borderColor}`}>
+                       <CheckCircle2 className={`w-5 h-5 ${departmentsData[activeTab].textColor}`} />
+                     </div>
+                     <div>
+                       <h4 className="text-white font-bold text-lg mb-1">{badge.title}</h4>
+                       <p className="text-slate-400 text-sm leading-relaxed">{badge.desc}</p>
+                     </div>
+                   </div>
+                 ))}
+               </div>
             </div>
 
-            <div className="bg-slate-900/80 border border-slate-800 rounded-3xl p-8 hover:border-orange-500/50 transition-all group">
-              <Layout className="w-12 h-12 text-orange-400 mb-6 group-hover:scale-110 transition-transform" />
-              <h3 className="text-2xl font-bold mb-3 text-white">İç Mimarlık ve Çevre Tasarımı</h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                İnsan-mekân etkileşimi, malzeme, aydınlatma ve sürdürülebilir iç mekân tasarımları uzmanlığı.
-              </p>
-              <a href="https://www.ozyegin.edu.tr/tr/ic-mimarlik-ve-cevre-tasarimi" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-orange-400 font-semibold text-sm hover:text-orange-300">
-                Detaylı Bilgi <ChevronRight className="w-4 h-4" />
-              </a>
+            {/* Right Column: Tech Stack */}
+            <div className="lg:col-span-4 flex flex-col gap-6">
+              <div className="bg-slate-800/40 border border-slate-700/50 rounded-3xl p-8 md:p-10">
+                <div className="flex items-center gap-3 mb-8">
+                  <Layers className={`w-6 h-6 ${departmentsData[activeTab].textColor}`} />
+                  <h4 className="text-white font-bold text-xl">Teknoloji Seti</h4>
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  {departmentsData[activeTab].tech.map((tech, tIdx) => (
+                    <span 
+                      key={tIdx} 
+                      className="px-4 py-2 bg-slate-900 border border-slate-700 text-slate-300 rounded-xl text-sm font-mono shadow-inner flex items-center justify-center text-center"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
 
-            <div className="bg-slate-900/80 border border-slate-800 rounded-3xl p-8 hover:border-rose-500/50 transition-all group">
-              <Box className="w-12 h-12 text-rose-400 mb-6 group-hover:scale-110 transition-transform" />
-              <h3 className="text-2xl font-bold mb-3 text-white">Endüstriyel Tasarım</h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Kullanıcı deneyimi, ürün geliştirme, inovasyon ve prototipleme odaklı yeni nesil endüstriyel tasarım eğitimi.
-              </p>
-              <a href="https://www.ozyegin.edu.tr/tr/endustriyel-tasarim" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-rose-400 font-semibold text-sm hover:text-rose-300">
-                Detaylı Bilgi <ChevronRight className="w-4 h-4" />
-              </a>
-            </div>
-
-            <div className="bg-slate-900/80 border border-slate-800 rounded-3xl p-8 hover:border-purple-500/50 transition-all group">
-              <Palette className="w-12 h-12 text-purple-400 mb-6 group-hover:scale-110 transition-transform" />
-              <h3 className="text-2xl font-bold mb-3 text-white">İletişim ve Tasarımı</h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Dijital medya, görsel iletişim, grafik tasarım ve dijital içerik üretimi alanlarında yaratıcı vizyon.
-              </p>
-              <a href="https://www.ozyegin.edu.tr/tr/iletisim-ve-tasarimi" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-purple-400 font-semibold text-sm hover:text-purple-300">
-                Detaylı Bilgi <ChevronRight className="w-4 h-4" />
-              </a>
-            </div>
           </div>
         </div>
       </section>
+
+      {/* Soft Transition (Dark to Light) */}
+      <div className="w-full h-32 bg-gradient-to-b from-slate-900 to-white pointer-events-none"></div>
 
       {/* 7. Fakülte Öne Çıkanlar (3 Column Cards) */}
       <motion.section 
@@ -477,6 +573,7 @@ export default function ArchitectureAndDesignPage() {
         </div>
       </motion.section>
 
+      <ArchitectureTicket />
       <Footer />
     </main>
   );
