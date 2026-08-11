@@ -9,7 +9,6 @@ import PersonaQuiz from "@/components/features/PersonaQuiz";
 import StatsMap from "@/components/features/StatsMap";
 import LibrarySection from "@/components/features/LibrarySection";
 import CalendarSync from "@/components/features/CalendarSync";
-import FloatingActionBar from "@/components/features/FloatingActionBar";
 import AIChatbot from "@/components/features/AIChatbot";
 import SustainabilitySection from "@/components/features/SustainabilitySection";
 import AlumniNetwork from "@/components/features/AlumniNetwork";
@@ -129,7 +128,7 @@ export default function Home() {
         </div>
       </div>
       {/* Floating Elements */}
-      <FloatingActionBar />
+
       <AIChatbot />
 
       {/* Footer */}
