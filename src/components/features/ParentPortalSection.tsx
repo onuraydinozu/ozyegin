@@ -31,12 +31,31 @@ export default function ParentPortalSection() {
 
         {/* TOP STATS CARDS */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-5 text-center">
-            <div className="text-3xl font-black text-emerald-400">
-              {ozuParentPortalData.careerAndROI.employmentRate}
+          {/* INFOGRAPHIC: Job Finding Speed */}
+          <div className="bg-slate-800/80 border border-emerald-500/30 rounded-2xl p-5 relative overflow-hidden group shadow-[0_0_15px_rgba(16,185,129,0.1)] hover:shadow-[0_0_25px_rgba(16,185,129,0.2)] transition-all">
+            <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent"></div>
+            <div className="relative z-10 flex flex-col h-full justify-between">
+              <div className="flex justify-between items-start mb-3">
+                <div className="text-[10px] text-emerald-400 font-extrabold uppercase tracking-widest">İş Bulma Hızı</div>
+                <div className="p-1.5 bg-emerald-500/20 rounded-lg">🚀</div>
+              </div>
+              <div className="text-4xl font-black text-white drop-shadow-md mb-1">
+                {ozuParentPortalData.careerAndROI.employmentRate}
+              </div>
+              <div className="text-[10px] text-slate-400 mb-4 leading-tight">Mezunlarımızın ilk 6 ay içerisinde işe yerleşme veya kendi işini kurma oranı</div>
+              
+              <div className="space-y-1.5 mt-auto">
+                <div className="flex justify-between text-[9px] text-slate-500 font-bold uppercase">
+                  <span>Mezuniyet</span>
+                  <span className="text-emerald-400">6 Ay İçinde</span>
+                </div>
+                <div className="w-full bg-slate-900 rounded-full h-2.5 overflow-hidden border border-slate-700">
+                  <div className="bg-gradient-to-r from-emerald-600 via-emerald-400 to-emerald-300 w-[94%] h-full rounded-full relative">
+                    <div className="absolute top-0 left-0 bottom-0 right-0 bg-white/20 animate-pulse"></div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="text-xs text-slate-300 font-bold mt-1">İşe Başlama Oranı</div>
-            <div className="text-[11px] text-slate-500">İlk 6 ay içerisinde</div>
           </div>
 
           <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-5 text-center">

@@ -11,17 +11,17 @@ export default function FloatingActionBar() {
       transition={{ delay: 1, type: "spring", stiffness: 200, damping: 20 }}
       className="fixed bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 z-40"
     >
-      <div className="bg-white/80 backdrop-blur-2xl border border-white/50 px-3 py-2.5 rounded-full flex items-center gap-2 md:gap-3 shadow-2xl shadow-black/10">
+      <div className="bg-white border border-gray-200 px-3 py-2.5 rounded-full flex items-center gap-2 md:gap-3 shadow-2xl shadow-black/10">
         
         {/* Sanal Kampüs Turu - Premium Button */}
         <a 
           href="https://360.ozyegin.edu.tr/sanal-tur/index.html" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="flex items-center gap-2.5 px-5 py-2.5 bg-gradient-to-r from-ozu-red to-orange-500 text-white rounded-full transition-all hover:scale-105 hover:shadow-lg hover:shadow-red-500/30 active:scale-95 group"
+          className="flex items-center gap-2.5 px-5 py-2.5 bg-white text-gray-700 border border-gray-100 hover:bg-orange-500 hover:text-white hover:border-orange-500 rounded-full transition-all hover:scale-105 hover:shadow-lg hover:shadow-orange-500/30 active:scale-95 group"
         >
-          <div className="bg-white/20 p-1.5 rounded-full">
-            <MapPin size={16} className="text-white group-hover:animate-bounce" />
+          <div className="bg-orange-100 group-hover:bg-white/20 p-1.5 rounded-full transition-colors">
+            <MapPin size={16} className="text-orange-500 group-hover:text-white transition-colors" />
           </div>
           <span className="hidden md:inline font-bold text-sm tracking-wide">Sanal Kampüs</span>
         </a>
