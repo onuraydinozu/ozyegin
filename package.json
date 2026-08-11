@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "sync": "git pull origin main && git add . && git commit -m \"Otomatik Senkronizasyon 🔄\" && git push origin main"
   },
   "dependencies": {
     "clsx": "^2.1.1",
