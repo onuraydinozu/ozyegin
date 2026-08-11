@@ -13,6 +13,7 @@ import AIChatbot from "@/components/features/AIChatbot";
 import SustainabilitySection from "@/components/features/SustainabilitySection";
 import AlumniNetwork from "@/components/features/AlumniNetwork";
 import ParentPortalSection from "@/components/features/ParentPortalSection";
+import StatisticsSection from "@/components/features/StatisticsSection";
 import Footer from "@/components/layout/Footer";
 
 export default function Home() {
@@ -35,6 +36,9 @@ export default function Home() {
 
       {/* NEW: Sustainability / Eco-friendly Section */}
       <SustainabilitySection />
+
+      {/* Rakamlarla ÖzÜ & AI Revolution */}
+      <StatisticsSection />
 
       {/* Main Content (V2 Features) */}
       <div className="relative z-10 bg-background pb-32 pt-16">
