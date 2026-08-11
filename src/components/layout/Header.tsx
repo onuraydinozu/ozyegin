@@ -60,7 +60,7 @@ export default function Header() {
           </div>
 
           <Link href="/taban-puanlar" className="text-[12px] font-bold tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">TABAN PUANLAR</Link>
-          <Link href="/veli-portali" className="text-[12px] font-bold tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">VELİ PORTALI</Link>
+          <Link href="/veli-portali" className="text-[12px] font-bold tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">VELİLER İÇİN</Link>
           <Link href="/spor-merkezi" className="text-[12px] font-bold tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">SPOR MERKEZİ</Link>
           <Link href="/ucretler" className="text-[12px] font-bold tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">ÜCRETLER</Link>
           <Link href="/yurtlar" className="text-[12px] font-bold tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">YURTLAR</Link>
@@ -113,7 +113,7 @@ export default function Header() {
             </div>
 
             <Link href="/taban-puanlar" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-bold tracking-widest text-slate-800 hover:text-[#DF1934] transition-colors border-b border-slate-100 pb-2">TABAN PUANLAR</Link>
-            <Link href="/veli-portali" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-bold tracking-widest text-slate-800 hover:text-[#DF1934] transition-colors border-b border-slate-100 pb-2">VELİ PORTALI</Link>
+            <Link href="/veli-portali" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-bold tracking-widest text-slate-800 hover:text-[#DF1934] transition-colors border-b border-slate-100 pb-2">VELİLER İÇİN</Link>
             <Link href="/spor-merkezi" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-bold tracking-widest text-slate-800 hover:text-[#DF1934] transition-colors border-b border-slate-100 pb-2">SPOR MERKEZİ</Link>
             <Link href="/ucretler" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-bold tracking-widest text-slate-800 hover:text-[#DF1934] transition-colors border-b border-slate-100 pb-2">ÜCRETLER</Link>
             <Link href="/yurtlar" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-bold tracking-widest text-slate-800 hover:text-[#DF1934] transition-colors border-b border-slate-100 pb-2">YURTLAR</Link>
