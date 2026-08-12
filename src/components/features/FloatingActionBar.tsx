@@ -18,10 +18,10 @@ export default function FloatingActionBar() {
           href="https://360.ozyegin.edu.tr/sanal-tur/index.html" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="flex items-center gap-2.5 px-5 py-2.5 bg-white text-gray-700 border border-gray-100 hover:bg-orange-500 hover:text-white hover:border-orange-500 rounded-full transition-all hover:scale-105 hover:shadow-lg hover:shadow-orange-500/30 active:scale-95 group"
+          className="flex items-center gap-2.5 px-5 py-2.5 bg-gradient-to-r from-[#DF1934] to-orange-500 text-white rounded-full transition-all hover:scale-105 hover:shadow-lg hover:shadow-red-500/30 active:scale-95 group"
         >
-          <div className="bg-orange-100 group-hover:bg-white/20 p-1.5 rounded-full transition-colors">
-            <MapPin size={16} className="text-orange-500 group-hover:text-white transition-colors" />
+          <div className="bg-white/20 group-hover:bg-white/30 p-1.5 rounded-full transition-colors">
+            <MapPin size={16} className="text-white group-hover:animate-bounce" />
           </div>
           <span className="hidden md:inline font-bold text-sm tracking-wide">Sanal Kampüs</span>
         </a>

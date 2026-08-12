@@ -104,7 +104,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar / Copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 pb-20 md:pb-0">
           <p>© {new Date().getFullYear()} Özyeğin Üniversitesi. Tüm Hakları Saklıdır.</p>
           <div className="flex flex-wrap items-center gap-6">
             <a href="https://www.ozyegin.edu.tr/tr/gizlilik-politikasi" target="_blank" rel="noreferrer" className="hover:text-slate-300 transition-colors">Gizlilik Politikası</a>
