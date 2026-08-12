@@ -41,7 +41,7 @@ export default function Header() {
         </Link>
         {/* Center: Navigation Links */}
         <nav className="hidden lg:flex items-center gap-6">
-          <Link href="/" className="text-[12px] font-bold tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">AKADEMİK BİRİMLER</Link>
+          <Link href="/" className="text-[12px] font-bold tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">ANASAYFA</Link>
           
           <div className="relative group">
             <button className="text-[12px] font-bold tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap flex items-center gap-1">
@@ -97,7 +97,7 @@ export default function Header() {
       {isMobileMenuOpen && (
         <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-slate-200 shadow-2xl max-h-[calc(100vh-80px)] overflow-y-auto z-50">
           <nav className="flex flex-col py-6 px-6 gap-6">
-            <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-bold tracking-widest text-slate-800 hover:text-[#DF1934] transition-colors border-b border-slate-100 pb-2">AKADEMİK BİRİMLER</Link>
+            <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-bold tracking-widest text-slate-800 hover:text-[#DF1934] transition-colors border-b border-slate-100 pb-2">ANASAYFA</Link>
             
             <div className="flex flex-col gap-3">
               <span className="text-[14px] font-bold tracking-widest text-slate-800 border-b border-slate-100 pb-2">FAKÜLTELER</span>

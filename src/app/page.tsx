@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import EventBanner from "@/components/features/EventBanner";
 import InfoSection from "@/components/features/InfoSection";
 import BrochuresSection from "@/components/features/BrochuresSection";
+import FacultyVideosSection from "@/components/features/FacultyVideosSection";
 import DynamicStatsMarquee from "@/components/features/DynamicStatsMarquee";
 import PersonaQuiz from "@/components/features/PersonaQuiz";
 import StatsMap from "@/components/features/StatsMap";
@@ -14,6 +15,8 @@ import SustainabilitySection from "@/components/features/SustainabilitySection";
 import AlumniNetwork from "@/components/features/AlumniNetwork";
 import ParentPortalSection from "@/components/features/ParentPortalSection";
 import StatisticsSection from "@/components/features/StatisticsSection";
+import EntrepreneurshipSection from "@/components/features/EntrepreneurshipSection";
+import SportsHighlightSection from "@/components/features/SportsHighlightSection";
 import Footer from "@/components/layout/Footer";
 
 export default function Home() {
@@ -31,14 +34,23 @@ export default function Home() {
       {/* NEW: Brochures & About Section */}
       <BrochuresSection />
 
+      {/* NEW: Kampüsü & Fakülteleri Keşfet (Video Lightbox) */}
+      <FacultyVideosSection />
+
       {/* Persona Quiz - Hangi ÖzÜ Bölümü Sensin? */}
       <PersonaQuiz />
 
       {/* NEW: Sustainability / Eco-friendly Section */}
       <SustainabilitySection />
 
+      {/* NEW: Sports Highlight Section */}
+      <SportsHighlightSection />
+
       {/* Rakamlarla ÖzÜ & AI Revolution */}
       <StatisticsSection />
+
+      {/* NEW: Girişimcilik & Startup Vitrini */}
+      <EntrepreneurshipSection />
 
       {/* Main Content (V2 Features) */}
       <div className="relative z-10 bg-background pb-32 pt-16">
