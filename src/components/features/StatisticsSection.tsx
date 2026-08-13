@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import { Bot, Cpu, Network, Sparkles } from "lucide-react";
 
 function Counter({ from, to, duration = 2 }: { from: number; to: number; duration?: number }) {
   const ref = useRef(null);
@@ -97,31 +98,91 @@ export default function StatisticsSection() {
 
         </div>
 
-        {/* 3D Tilt Card Section - Light Variant */}
+        {/* AI Revolution Section - Premium Variant */}
         <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          whileHover={{ rotateX: 5, rotateY: -5, scale: 1.02 }}
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          className="mt-24 relative w-full rounded-[3rem] overflow-hidden border border-white bg-gradient-to-br from-blue-50 to-white aspect-[21/9] flex items-center justify-center p-8 md:p-16 cursor-crosshair perspective-1000 shadow-2xl shadow-blue-900/10"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="mt-24 md:mt-32 relative w-full rounded-[2.5rem] md:rounded-[3rem] overflow-hidden border border-white/60 bg-gradient-to-b from-white to-blue-50/50 min-h-[400px] md:min-h-[500px] flex items-center justify-center p-8 md:p-16 lg:p-24 shadow-[0_20px_60px_-15px_rgba(0,102,255,0.1)] group"
         >
-          {/* Abstract Generative Art Background */}
-          <div className="absolute inset-0 opacity-10">
-            <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full stroke-blue-600" strokeWidth="0.5" fill="none">
-              {Array.from({ length: 20 }).map((_, i) => (
-                <ellipse key={i} cx="50" cy="50" rx={10 + i * 4} ry={5 + i * 2} transform={`rotate(${i * 15} 50 50)`} />
+          {/* Animated Glow Orbs */}
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-400/20 rounded-full blur-[100px] -translate-y-1/2 opacity-50 group-hover:opacity-80 transition-opacity duration-700 pointer-events-none" />
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-400/20 rounded-full blur-[100px] translate-y-1/2 opacity-50 group-hover:opacity-80 transition-opacity duration-700 pointer-events-none" />
+
+          {/* Abstract Generative Art Background - subtle */}
+          <div className="absolute inset-0 opacity-[0.03] group-hover:opacity-[0.05] transition-opacity duration-700">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full stroke-blue-900" strokeWidth="0.5" fill="none">
+              {Array.from({ length: 24 }).map((_, i) => (
+                <ellipse key={i} cx="50" cy="50" rx={15 + i * 4} ry={8 + i * 2} transform={`rotate(${i * 15} 50 50)`} />
               ))}
             </svg>
           </div>
 
-          <div className="relative z-10 text-center max-w-3xl pointer-events-none">
-            <h3 className="text-4xl md:text-6xl font-black text-gray-900 mb-6 drop-shadow-sm">
-              ÖzÜ&apos;nde <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0066FF] to-emerald-500">Yapay Zeka</span> Devrimi
-            </h3>
-            <p className="text-xl text-gray-600 font-medium">
+          {/* Floating Tech Icons (Desktop only for cleaner mobile) */}
+          <motion.div 
+            animate={{ y: [-10, 10, -10], rotate: [0, 5, 0] }} 
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-12 left-12 hidden md:flex items-center justify-center w-16 h-16 rounded-2xl bg-white shadow-xl shadow-blue-900/5 text-blue-500 border border-blue-50"
+          >
+            <Bot size={28} />
+          </motion.div>
+          <motion.div 
+            animate={{ y: [10, -10, 10], rotate: [0, -5, 0] }} 
+            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            className="absolute bottom-12 right-12 hidden md:flex items-center justify-center w-16 h-16 rounded-2xl bg-white shadow-xl shadow-emerald-900/5 text-emerald-500 border border-emerald-50"
+          >
+            <Cpu size={28} />
+          </motion.div>
+          <motion.div 
+            animate={{ y: [-15, 15, -15], scale: [1, 1.05, 1] }} 
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+            className="absolute top-1/2 right-12 md:right-24 hidden lg:flex items-center justify-center w-14 h-14 rounded-full bg-white shadow-xl shadow-purple-900/5 text-purple-500 border border-purple-50"
+          >
+            <Network size={24} />
+          </motion.div>
+
+          <div className="relative z-10 text-center max-w-4xl mx-auto flex flex-col items-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-600 font-semibold text-sm mb-8"
+            >
+              <Sparkles size={16} className="text-blue-500" />
+              Geleceğin Eğitimi
+            </motion.div>
+            
+            <motion.h3 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-6 md:mb-8 tracking-tight leading-[1.1]"
+            >
+              ÖzÜ&apos;nde <br className="md:hidden" />
+              <span className="relative inline-block">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0066FF] via-blue-500 to-emerald-400">Yapay Zeka</span>
+                <motion.span 
+                  initial={{ width: "0%" }}
+                  whileInView={{ width: "100%" }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.8, duration: 0.8, ease: "circOut" }}
+                  className="absolute bottom-1 md:bottom-2 left-0 h-1.5 md:h-2 lg:h-3 bg-gradient-to-r from-[#0066FF]/30 to-emerald-400/30 rounded-full -z-10" 
+                />
+              </span> Devrimi
+            </motion.h3>
+
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+              className="text-lg md:text-xl lg:text-2xl text-slate-600 font-medium leading-relaxed max-w-2xl"
+            >
               Geleceği tek bir disiplin yazmayacak. Sanattan mühendisliğe tüm programlarımızda yapay zeka entegrasyonu.
-            </p>
+            </motion.p>
           </div>
         </motion.div>
 

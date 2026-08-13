@@ -30,7 +30,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         
         {/* Left: Logo */}
-        <Link href="/" className="flex flex-col group relative w-[160px] h-[48px] mt-1">
+        <Link href="/" className="flex flex-col group relative w-[160px] h-[48px] mt-1 shrink-0">
           <Image 
             src="/ozu_logo.png" 
             alt="Özyeğin Üniversitesi" 
@@ -40,11 +40,11 @@ export default function Header() {
           />
         </Link>
         {/* Center: Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-6">
-          <Link href="/" className="text-[12px] font-bold tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">ANASAYFA</Link>
+        <nav className="hidden lg:flex items-center gap-3 xl:gap-5">
+          <Link href="/" className="text-[11px] xl:text-[12px] font-bold tracking-wider xl:tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">ANASAYFA</Link>
           
           <div className="relative group">
-            <button className="text-[12px] font-bold tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap flex items-center gap-1">
+            <button className="text-[11px] xl:text-[12px] font-bold tracking-wider xl:tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap flex items-center gap-1">
               FAKÜLTELER
               <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
             </button>
@@ -59,15 +59,28 @@ export default function Header() {
             </div>
           </div>
 
-          <Link href="/taban-puanlar" className="text-[12px] font-bold tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">TABAN PUANLAR</Link>
-          <Link href="/veli-portali" className="text-[12px] font-bold tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">VELİLER İÇİN</Link>
-          <Link href="/spor-merkezi" className="text-[12px] font-bold tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">SPOR MERKEZİ</Link>
-          <Link href="/ucretler" className="text-[12px] font-bold tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">ÜCRETLER</Link>
-          <Link href="/yurtlar" className="text-[12px] font-bold tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">YURTLAR</Link>
-          <Link href="/burslar" className="text-[12px] font-bold tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">BURSLAR</Link>
+          <div className="relative group">
+            <button className="text-[11px] xl:text-[12px] font-bold tracking-wider xl:tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap flex items-center gap-1">
+              ZİYARET & İLETİŞİM
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-white/95 backdrop-blur-xl rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2">
+              <Link href="/ziyaret/kampus-ziyaret-formu" className="block px-5 py-2.5 text-[13px] font-medium text-slate-700 hover:bg-slate-50 hover:text-[#DF1934] transition-colors">Kampüs Ziyaret Formu</Link>
+              <Link href="/ziyaret/brosur-talep" className="block px-5 py-2.5 text-[13px] font-medium text-slate-700 hover:bg-slate-50 hover:text-[#DF1934] transition-colors">Broşür Talep Formu</Link>
+              <Link href="/ziyaret/bireysel-gorusme" className="block px-5 py-2.5 text-[13px] font-medium text-slate-700 hover:bg-slate-50 hover:text-[#DF1934] transition-colors">Bireysel Görüşme</Link>
+              <Link href="/ziyaret/bize-sorun" className="block px-5 py-2.5 text-[13px] font-medium text-slate-700 hover:bg-slate-50 hover:text-[#DF1934] transition-colors">Bize Sorun</Link>
+            </div>
+          </div>
+
+          <Link href="/taban-puanlar" className="text-[11px] xl:text-[12px] font-bold tracking-wider xl:tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">TABAN PUANLAR</Link>
+          <Link href="/veli-portali" className="text-[11px] xl:text-[12px] font-bold tracking-wider xl:tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">VELİLER İÇİN</Link>
+          <Link href="/spor-merkezi" className="text-[11px] xl:text-[12px] font-bold tracking-wider xl:tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">SPOR MERKEZİ</Link>
+          <Link href="/ucretler" className="text-[11px] xl:text-[12px] font-bold tracking-wider xl:tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">ÜCRETLER</Link>
+          <Link href="/yurtlar" className="text-[11px] xl:text-[12px] font-bold tracking-wider xl:tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">YURTLAR</Link>
+          <Link href="/burslar" className="text-[11px] xl:text-[12px] font-bold tracking-wider xl:tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">BURSLAR</Link>
         </nav>
         {/* Right: Actions */}
-        <div className="hidden lg:flex items-center gap-6">
+        <div className="hidden lg:flex items-center gap-4 shrink-0">
           <div className="flex items-center gap-4 text-slate-400">
             <button className="hover:text-[#DF1934] transition-colors">
               <Search className="w-4 h-4" />
@@ -77,7 +90,7 @@ export default function Header() {
             href="https://aday.ozyegin.edu.tr/" 
             target="_blank" 
             rel="noreferrer"
-            className="px-6 py-2.5 bg-[#DF1934] hover:bg-[#c4152d] text-white text-[12px] font-bold tracking-widest rounded-full transition-all shadow-md shadow-red-500/20"
+            className="px-5 py-2.5 bg-[#DF1934] hover:bg-[#c4152d] text-white text-[11px] xl:text-[12px] font-bold tracking-widest rounded-full transition-all shadow-md shadow-red-500/20 whitespace-nowrap"
           >
             TERCİH VE TANITIM
           </a>
@@ -109,6 +122,16 @@ export default function Header() {
                 <Link href="/fakulteler/hukuk" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-medium text-slate-600 hover:text-[#DF1934]">Hukuk Fakültesi</Link>
                 <Link href="/fakulteler/mimarlik-ve-tasarim" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-medium text-slate-600 hover:text-[#DF1934]">Mimarlık ve Tasarım Fakültesi</Link>
                 <Link href="/fakulteler/uygulamali-bilimler" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-medium text-slate-600 hover:text-[#DF1934]">Uygulamalı Bilimler Fakültesi</Link>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-3">
+              <span className="text-[14px] font-bold tracking-widest text-slate-800 border-b border-slate-100 pb-2">ZİYARET & İLETİŞİM</span>
+              <div className="flex flex-col gap-3 pl-4">
+                <Link href="/ziyaret/kampus-ziyaret-formu" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-medium text-slate-600 hover:text-[#DF1934]">Kampüs Ziyaret Formu</Link>
+                <Link href="/ziyaret/brosur-talep" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-medium text-slate-600 hover:text-[#DF1934]">Broşür Talep Formu</Link>
+                <Link href="/ziyaret/bireysel-gorusme" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-medium text-slate-600 hover:text-[#DF1934]">Bireysel Görüşme</Link>
+                <Link href="/ziyaret/bize-sorun" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-medium text-slate-600 hover:text-[#DF1934]">Bize Sorun</Link>
               </div>
             </div>
 

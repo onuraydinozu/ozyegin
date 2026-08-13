@@ -89,7 +89,7 @@ export default function FacultyVideosSection() {
           <div className="lg:col-span-8 relative rounded-[24px] overflow-hidden bg-black aspect-video shadow-2xl">
             <iframe
               key={activeVideo.id} // Forces iframe reload on change
-              src={`https://www.youtube.com/embed/${activeVideo.id}?autoplay=1&rel=0`}
+              src={`https://www.youtube.com/embed/${activeVideo.id}?autoplay=0&rel=0`}
               title={activeVideo.title}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen

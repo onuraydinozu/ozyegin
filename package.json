@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --webpack",
+    "dev:next": "next dev --webpack",
+    "dev:admin": "node admin-server.mjs",
+    "dev": "npm run dev:admin & npm run dev:next",
     "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
