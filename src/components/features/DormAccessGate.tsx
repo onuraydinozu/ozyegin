@@ -194,7 +194,7 @@ export default function DormAccessGate({ onUnlock }: { onUnlock: () => void }) {
               
               {/* Bottom Blue Section */}
               <div className="h-[35%] bg-[#244177] w-full px-5 py-3 flex flex-col justify-end text-white">
-                 <h3 className="font-medium text-[18px] leading-tight mb-0.5">Uğur HERSEK</h3>
+                 <h3 className="font-medium text-[18px] leading-tight mb-0.5">Bilal FINDIK</h3>
                  <p className="text-[11px] text-white/90 font-light tracking-wide">S000000 / Bilgisayar Mühendisliği L.</p>
               </div>
             </motion.div>
