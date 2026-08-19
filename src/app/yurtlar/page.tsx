@@ -237,7 +237,7 @@ export default function YurtlarPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="group rounded-3xl overflow-hidden shadow-lg border border-slate-100 relative aspect-[4/3]">
-              <img src="/ozu_yurtlar_hero.jpg" alt="ÖzÜ Yurtlar Dış Görünüm" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <img src="https://www.ozyegin.edu.tr/sites/default/files/3-futbol_sahasi_0.jpg" alt="ÖzÜ Yurtlar Dış Görünüm" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
               <div className="absolute bottom-6 left-6 text-white">
                 <h3 className="text-2xl font-bold mb-1">Modern Kampüs Mimarisi</h3>
@@ -245,7 +245,7 @@ export default function YurtlarPage() {
               </div>
             </div>
             <div className="group rounded-3xl overflow-hidden shadow-lg border border-slate-100 relative aspect-[4/3]">
-              <img src="/ozu_yurtlar_oda.jpg" alt="ÖzÜ Yurtlar İç Görünüm" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <img src="https://www.ozyegin.edu.tr/sites/default/files/9_2_1.jpg" alt="ÖzÜ Yurtlar İç Görünüm" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
               <div className="absolute bottom-6 left-6 text-white">
                 <h3 className="text-2xl font-bold mb-1">Konforlu Yaşam Alanları</h3>

@@ -11,7 +11,7 @@ export default function EventBanner() {
       {/* Dynamic Background Image with Parallax Effect */}
       <div className="absolute inset-0 z-0">
         <Image 
-          src="/images/campus1.jpg" 
+          src="https://www.ozyegin.edu.tr/sites/default/files/tesis3_2.jpg" 
           alt="Özyeğin Üniversitesi Kampüsü" 
           fill 
           priority
@@ -139,7 +139,7 @@ export default function EventBanner() {
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             className="absolute -bottom-10 -left-10 w-48 h-48 rounded-[2rem] border-4 border-white overflow-hidden shadow-2xl z-30 hidden xl:block"
           >
-            <Image src="/images/campus2.jpg" alt="Kampüs Hayatı" fill className="object-cover" />
+            <Image src="https://www.ozyegin.edu.tr/sites/default/files/3-futbol_sahasi_0.jpg" alt="Kampüs Hayatı" fill className="object-cover" />
           </motion.div>
         </motion.div>
 

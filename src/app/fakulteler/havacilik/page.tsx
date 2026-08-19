@@ -445,7 +445,7 @@ export default function AviationPage() {
           </div>
           <div className="relative h-[400px] w-full rounded-3xl overflow-hidden border border-sky-100 group shadow-xl">
             <Image
-              src="/ozu_havacilik_hedef.jpg"
+              src="https://www.ozyegin.edu.tr/sites/default/files/05d96c93-a857-4a9a-9f71-8c3fcd3a98cc_0.jpg"
               alt="Özyeğin Üniversitesi Havacılık Öğrencisi"
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -1097,7 +1097,7 @@ export default function AviationPage() {
               <h2 className="text-[#1A1A1A] font-black text-4xl leading-none">ÖZÜ<br/>Simülatör<br/>Merkezi</h2>
             </div>
             <div className="w-full aspect-square md:aspect-[4/3] relative mb-6 overflow-hidden">
-              <Image src="/ozu_simulator_merkezi.jpg" alt="ÖZÜ Simülatör Merkezi" fill className="object-cover" />
+              <Image src="https://www.ozyegin.edu.tr/sites/default/files/img-20220727-wa0042_0.jpg" alt="ÖZÜ Simülatör Merkezi" fill className="object-cover" />
             </div>
             <p className="text-[#6D6D6D] text-[15px] leading-relaxed mb-8 flex-grow">
               Öğrencilerinin uçuş tecrübelerini artırmak ve onları mesleğe hazırlamak amacıyla “Simülatör Merkezi” kuran ilk üniversite olan Özyeğin Üniversitesi bu uygulama ile Pilotaj Lisans Programı’nı tamamlayan mezunlarının, iş başvurularının standart bir parçası olan simülatör deneyimini kazanmasını ve bulundukları ortamda fark yaratmasını sağlıyor.
@@ -1115,7 +1115,7 @@ export default function AviationPage() {
               <h2 className="text-[#1A1A1A] font-black text-4xl leading-tight">Özyeğin<br/>Üniversitesi&apos;ne<br/>&quot;Yılın<br/>Havacılık ve<br/>Uzay Bilimleri<br/>Fakültesi<br/>Ödülü&quot;</h2>
             </div>
             <div className="w-full aspect-square md:aspect-[4/3] relative mb-6 overflow-hidden">
-              <Image src="/ozu_havacilik_odulu.jpg" alt="Yılın Fakültesi Ödülü" fill className="object-cover" />
+              <Image src="https://www.ozyegin.edu.tr/sites/default/files/ozu_spor_odulleri_0.jpeg" alt="Yılın Fakültesi Ödülü" fill className="object-cover" />
             </div>
             <p className="text-[#6D6D6D] text-[15px] leading-relaxed mb-8 flex-grow">
               Özyeğin Üniversitesi Havacılık ve Uzay Bilimleri Fakültesi, BLUESKY Havacılık Başarı Ödülleri kapsamında, “Yılın Havacılık ve Uzay Bilimleri Fakültesi” ödülüne layık görüldü. Ulusal ve uluslararası çapta havacılık sektörünü ileri taşıyan kurum ve kuruluşların değerlendirildiği ödül programında, Özyeğin Üniversitesi bu alana sunduğu akademik katkı ve sektörlerle iç içe eğitim anlayışı dolayısıyla ödülün sahibi oldu.
@@ -1133,7 +1133,7 @@ export default function AviationPage() {
               <h2 className="text-[#1A1A1A] font-black text-4xl leading-tight">Akademik<br/>Kadro</h2>
             </div>
             <div className="w-full aspect-square md:aspect-[4/3] relative mb-6 mt-16 overflow-hidden">
-              <Image src="/ozu_akademik_kadro.jpg" alt="Akademik Kadro" fill className="object-cover" />
+              <Image src="https://www.ozyegin.edu.tr/sites/default/files/yuzme_havuzu.jpg" alt="Akademik Kadro" fill className="object-cover" />
             </div>
             <p className="text-[#6D6D6D] text-[15px] leading-relaxed mb-8 flex-grow">
               Özyeğin Üniversitesi’nin deneyimli akademisyenleri, hem akademik birikimleri hem de sektörel deneyimleriyle öğrencilere ilham veren rehberlerdir. Öğrenmeyi teoriyle sınırlamayıp, gerçek dünya uygulamalarıyla zenginleştiren bu öğretim üyeleri; öğrencilerin analitik düşünme, problem çözme ve yenilikçi yaklaşımlar geliştirme becerilerini destekler. Açık iletişime önem veren ve her öğrencinin potansiyeline ulaşması için birebir ilgi gösteren akademisyenler, üniversite yaşamınızı sadece bir eğitim süreci değil, aynı zamanda kişisel gelişim yolculuğu haline getirir.

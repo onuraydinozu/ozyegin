@@ -45,49 +45,65 @@ export default function SportsCenterPage() {
       <Header />
 
       {/* Hero Section */}
-      <div className="relative min-h-[85vh] w-full overflow-hidden flex flex-col justify-end bg-[#0B1B3D]">
+      <section className="relative min-h-[90vh] py-32 overflow-hidden bg-[#0B1B3D] text-white flex flex-col justify-end">
+        {/* Background Image with Dark Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src={sportsCenterData.hero.image}
-            alt="ÖzÜ Spor"
-            className="w-full h-full object-cover opacity-40 mix-blend-overlay"
+            src={sportsCenterData.hero.image} 
+            alt="ÖzÜ Spor Tesisleri" 
+            className="w-full h-full object-cover opacity-30 mix-blend-overlay"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B3D] via-[#0B1B3D]/70 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0B1B3D]/90 via-[#0B1B3D]/80 to-[#0B1B3D]/95"></div>
         </div>
 
-        <div className="relative z-20 max-w-7xl mx-auto px-6 pb-20 w-full pt-40">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
+        <div className="max-w-7xl mx-auto px-6 relative z-10 w-full mt-24">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+            className="max-w-4xl mb-16"
           >
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-4 text-white tracking-tight drop-shadow-lg">
+            <div className="flex items-center gap-3 mb-4 text-[#FF5722]">
+              <Trophy className="w-5 h-5" />
+              <h3 className="text-sm font-black uppercase tracking-widest">ÖzÜ Spor Merkezi</h3>
+            </div>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight tracking-tight drop-shadow-lg">
               {sportsCenterData.hero.title}
             </h1>
-            <h2 className="text-2xl md:text-3xl text-[#FF5722] font-bold mb-10 drop-shadow-md">
-              {sportsCenterData.hero.subtitle}
-            </h2>
+            <p className="text-slate-300 text-lg md:text-xl leading-relaxed mb-8 font-light">
+              {sportsCenterData.hero.description} {sportsCenterData.hero.description2}
+            </p>
           </motion.div>
 
-          <motion.div 
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="bg-white/95 backdrop-blur-xl rounded-2xl p-8 md:p-10 shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-slate-100 max-w-4xl"
-          >
-            <div className="flex items-center gap-3 mb-4 text-[#0B1B3D]">
-              <Trophy className="w-6 h-6" />
-              <h3 className="text-xl font-bold uppercase tracking-wide">Vizyon & Misyon</h3>
-            </div>
-            <p className="text-slate-700 leading-relaxed mb-4 text-lg">
-              {sportsCenterData.hero.description}
-            </p>
-            <p className="text-slate-600 leading-relaxed font-medium">
-              {sportsCenterData.hero.description2}
-            </p>
-          </motion.div>
+          {/* KPI Badges */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 border-t border-b border-white/10 py-12">
+            {[
+              { value: "20.000 m²", label: "Kapalı Spor Salonu ve Ana Bina" },
+              { value: "400 m²", label: "Fitness ve Kardiyo Alanı" },
+              { value: "25 m", label: "Yarı Olimpik Kapalı Yüzme Havuzu" },
+              { value: "20+", label: "Ulusal ve Uluslararası Aktif Spor Takımı" }
+            ].map((kpi, idx) => (
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 * idx }}
+                className="flex flex-col gap-2 relative"
+              >
+                {/* Optional separator line for desktop */}
+                {idx !== 0 && (
+                  <div className="hidden md:block absolute -left-4 top-1/2 -translate-y-1/2 w-[1px] h-16 bg-white/10"></div>
+                )}
+                <div className="text-4xl md:text-5xl font-black text-[#FF5722] drop-shadow-md tracking-tighter">
+                  {kpi.value}
+                </div>
+                <div className="text-sm text-slate-300 leading-relaxed max-w-[200px] font-medium">
+                  {kpi.label}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* Teams Vitrini (Tabbed Grid) */}
       <section className="py-24 bg-[#F8F9FA]">

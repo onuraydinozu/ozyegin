@@ -34,7 +34,7 @@ export default function BrosurTalepFormu() {
         {/* Left Side: HD Photo */}
         <div className="hidden lg:block w-[45%] xl:w-[50%] relative">
           <Image 
-            src="/ozu_havacilik_hedef.jpg" 
+            src="https://www.ozyegin.edu.tr/sites/default/files/05d96c93-a857-4a9a-9f71-8c3fcd3a98cc_0.jpg" 
             alt="Özyeğin Üniversitesi Broşür" 
             fill 
             className="object-cover object-center"

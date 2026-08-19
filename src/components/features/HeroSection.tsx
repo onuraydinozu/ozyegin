@@ -115,7 +115,7 @@ export default function HeroSection() {
             className="bg-white/60 backdrop-blur-2xl border border-white p-6 rounded-[2rem] flex flex-col group cursor-pointer shadow-xl shadow-black/5 overflow-hidden relative"
           >
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 z-10"></div>
-            <Image src="/images/campus4.jpg" alt="Yapay Zeka" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+            <Image src="https://www.ozyegin.edu.tr/sites/default/files/spor_salonu.jpg" alt="Yapay Zeka" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
             <div className="relative z-20 mt-auto pt-32 text-left">
               <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-4 border border-white/30">
                 <Sparkles className="text-white w-6 h-6" />
@@ -133,7 +133,7 @@ export default function HeroSection() {
             className="bg-white/60 backdrop-blur-2xl border border-white p-6 rounded-[2rem] flex flex-col group cursor-pointer shadow-xl shadow-black/5 overflow-hidden relative"
           >
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 z-10"></div>
-            <Image src="/images/campus1.jpg" alt="Sanal Kampüs" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+            <Image src="https://www.ozyegin.edu.tr/sites/default/files/05d96c93-a857-4a9a-9f71-8c3fcd3a98cc_0.jpg" alt="Sanal Kampüs" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
             <div className="relative z-20 mt-auto pt-32 text-left">
               <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-4 border border-white/30">
                 <Compass className="text-white w-6 h-6" />
@@ -151,7 +151,7 @@ export default function HeroSection() {
             className="bg-white/60 backdrop-blur-2xl border border-white p-6 rounded-[2rem] flex flex-col group cursor-pointer shadow-xl shadow-black/5 overflow-hidden relative"
           >
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 z-10"></div>
-            <Image src="/images/campus2.jpg" alt="Girişimcilik" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+            <Image src="https://www.ozyegin.edu.tr/sites/default/files/img_3288_0.jpg" alt="Girişimcilik" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
             <div className="relative z-20 mt-auto pt-32 text-left">
               <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-4 border border-white/30">
                 <Rocket className="text-white w-6 h-6" />

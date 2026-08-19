@@ -23,7 +23,7 @@ export default function BireyselGorusme() {
         {/* Left Side: HD Photo */}
         <div className="hidden lg:block w-[45%] xl:w-[50%] relative">
           <Image 
-            src="/ozu_mukemmellik_merkezi.jpg" 
+            src="https://www.ozyegin.edu.tr/sites/default/files/spor_salonu.jpg" 
             alt="Özyeğin Üniversitesi Mükemmellik Merkezi" 
             fill 
             className="object-cover object-center"

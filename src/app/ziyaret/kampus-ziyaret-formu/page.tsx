@@ -33,7 +33,7 @@ export default function KampusZiyaretFormu() {
         {/* Left Side: HD Photo */}
         <div className="hidden lg:block w-[45%] xl:w-[50%] relative">
           <Image 
-            src="/ozu_yurtlar_hero.jpg" 
+            src="https://www.ozyegin.edu.tr/sites/default/files/3-futbol_sahasi_0.jpg" 
             alt="Özyeğin Üniversitesi Kampüs" 
             fill 
             className="object-cover"

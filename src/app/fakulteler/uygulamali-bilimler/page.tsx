@@ -104,7 +104,7 @@ export default function UygulamaliBilimlerPage() {
             </div>
           </div>
           <div className="relative h-[400px] w-full rounded-3xl overflow-hidden shadow-2xl border border-slate-200">
-            <Image src="/ozu_gastronomi_hero.jpg" alt="Uygulamalı Bilimler Fakültesi" fill className="object-cover" />
+            <Image src="https://www.ozyegin.edu.tr/sites/default/files/tesis3_2.jpg" alt="Uygulamalı Bilimler Fakültesi" fill className="object-cover" />
           </div>
         </div>
       </section>
@@ -372,7 +372,7 @@ export default function UygulamaliBilimlerPage() {
               <h2 className="text-[#1A1A1A] font-black text-4xl leading-tight">Le Cordon Bleu<br/>Sertifika<br/>Programları</h2>
             </div>
             <div className="w-full aspect-square md:aspect-[4/3] relative mb-6 overflow-hidden rounded-2xl">
-              <Image src="/ozu_le_cordon_bleu.jpg" alt="Le Cordon Bleu" fill className="object-cover" />
+              <Image src="https://www.ozyegin.edu.tr/sites/default/files/img_3288_0.jpg" alt="Le Cordon Bleu" fill className="object-cover" />
             </div>
             <p className="text-[#6D6D6D] text-[15px] leading-relaxed mb-8 flex-grow">
               “Le Cordon Bleu” (Mavi Kurdele) isminin mutfak sanatları ile ilişkilendirilmesi ilk olarak 16. yüzyılda ortaya çıktı. Le Cordon Bleu ismi, Fransa Kralı III. Henri tarafından kurulmuş ve zaferlerini şatafatlı ziyafetlerle kutlayan Saint-Esprit Şövalyeleri’nin sembolünde bulunan mavi kurdele nedeniyle, 16. yüzyıldan itibaren mutfaktaki mükemmeliyetin simgesi oldu.
@@ -390,7 +390,7 @@ export default function UygulamaliBilimlerPage() {
               <h2 className="text-[#1A1A1A] font-black text-4xl leading-tight">Mükemmellik<br/>Merkezi<br/>360° Sanal Tur</h2>
             </div>
             <div className="w-full aspect-square md:aspect-[4/3] relative mb-6 mt-2 overflow-hidden rounded-2xl">
-              <Image src="/ozu_mukemmellik_merkezi.jpg" alt="Mükemmellik Merkezi" fill className="object-cover" />
+              <Image src="https://www.ozyegin.edu.tr/sites/default/files/spor_salonu.jpg" alt="Mükemmellik Merkezi" fill className="object-cover" />
             </div>
             <p className="text-[#6D6D6D] text-[15px] leading-relaxed mb-8 flex-grow">
               Öğrencilerimiz, eğitimleri süresince gerek profesyonel olarak tasarlanmış örnek otel odalarında, ön büro ve rezervasyon alanlarında çalışarak, gerek kampüste bulunan 3,650 m2’lik Mükemmeliyet Merkezi’nin modern mutfaklarında yiyecek hazırlayarak, gerekse hazırladıkları yiyecekleri L’Atelier Bleu adlı uygulama restoranımızda misafirlerin beğenisine öğle ve akşam yemeklerinde sunarak, kendilerini geliştirmekte ve gelecekte topluma önderlik edebilecek bireyler haline gelmektedirler.

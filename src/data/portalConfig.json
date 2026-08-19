@@ -374,7 +374,7 @@
       "name": "Zeynep",
       "department": "Hukuk",
       "year": "3. Sınıf",
-      "avatar": "/images/campus5.jpg",
+      "avatar": "/ozu_burcin_unlu.png",
       "isActive": true,
       "expertises": [
         "Hazırlık Sınavı",
@@ -386,7 +386,7 @@
       "name": "Burak",
       "department": "Elektrik-Elektronik",
       "year": "4. Sınıf",
-      "avatar": "/images/campus4.jpg",
+      "avatar": "https://www.ozyegin.edu.tr/sites/default/files/yuzme_havuzu.jpg",
       "isActive": false,
       "expertises": [
         "Erasmus",
@@ -398,7 +398,7 @@
       "name": "Cemre",
       "department": "Psikoloji",
       "year": "2. Sınıf",
-      "avatar": "/images/campus2.jpg",
+      "avatar": "https://www.ozyegin.edu.tr/sites/default/files/05d96c93-a857-4a9a-9f71-8c3fcd3a98cc_0.jpg",
       "isActive": true,
       "expertises": [
         "Yurt Yaşamı",

@@ -34,7 +34,7 @@ export default function DormAccessGate({ onUnlock }: { onUnlock: () => void }) {
       >
         {/* Dynamic Architectural Background */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[url('/ozu_yurtlar_hero.jpg')] bg-cover bg-center opacity-30 mix-blend-luminosity blur-sm scale-105"></div>
+          <div className="absolute inset-0 bg-[url('https://www.ozyegin.edu.tr/sites/default/files/3-futbol_sahasi_0.jpg')] bg-cover bg-center opacity-30 mix-blend-luminosity blur-sm scale-105"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/80 to-slate-100/90"></div>
           
           <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-400/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3"></div>

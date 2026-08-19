@@ -22,7 +22,7 @@ export default function BizeSorun() {
         {/* Left Side: HD Photo */}
         <div className="hidden lg:block w-[45%] xl:w-[50%] relative">
           <Image 
-            src="/ozu_akademik_kadro.jpg" 
+            src="https://www.ozyegin.edu.tr/sites/default/files/yuzme_havuzu.jpg" 
             alt="Özyeğin Üniversitesi Akademik Kadro" 
             fill 
             className="object-cover object-center"

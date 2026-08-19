@@ -72,12 +72,31 @@ export default function Header() {
             </div>
           </div>
 
-          <Link href="/taban-puanlar" className="text-[11px] xl:text-[12px] font-bold tracking-wider xl:tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">TABAN PUANLAR</Link>
-          <Link href="/veli-portali" className="text-[11px] xl:text-[12px] font-bold tracking-wider xl:tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">VELİLER İÇİN</Link>
-          <Link href="/spor-merkezi" className="text-[11px] xl:text-[12px] font-bold tracking-wider xl:tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">SPOR MERKEZİ</Link>
-          <Link href="/ucretler" className="text-[11px] xl:text-[12px] font-bold tracking-wider xl:tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">ÜCRETLER</Link>
-          <Link href="/yurtlar" className="text-[11px] xl:text-[12px] font-bold tracking-wider xl:tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">YURTLAR</Link>
-          <Link href="/burslar" className="text-[11px] xl:text-[12px] font-bold tracking-wider xl:tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">BURSLAR</Link>
+          <Link href="/kariyer-ve-mezunlar" className="text-[11px] xl:text-[12px] font-bold tracking-wider xl:tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap">KARİYER & MEZUNLAR</Link>
+
+          <div className="relative group">
+            <button className="text-[11px] xl:text-[12px] font-bold tracking-wider xl:tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap flex items-center gap-1">
+              ADAY ÖĞRENCİ
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-white/95 backdrop-blur-xl rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2">
+              <Link href="/taban-puanlar" className="block px-5 py-2.5 text-[13px] font-medium text-slate-700 hover:bg-slate-50 hover:text-[#DF1934] transition-colors">Taban Puanlar</Link>
+              <Link href="/ucretler" className="block px-5 py-2.5 text-[13px] font-medium text-slate-700 hover:bg-slate-50 hover:text-[#DF1934] transition-colors">Ücretler</Link>
+              <Link href="/burslar" className="block px-5 py-2.5 text-[13px] font-medium text-slate-700 hover:bg-slate-50 hover:text-[#DF1934] transition-colors">Burslar</Link>
+            </div>
+          </div>
+
+          <div className="relative group">
+            <button className="text-[11px] xl:text-[12px] font-bold tracking-wider xl:tracking-widest text-slate-600 hover:text-[#DF1934] transition-colors whitespace-nowrap flex items-center gap-1">
+              KAMPÜS YAŞAMI
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-white/95 backdrop-blur-xl rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2">
+              <Link href="/yurtlar" className="block px-5 py-2.5 text-[13px] font-medium text-slate-700 hover:bg-slate-50 hover:text-[#DF1934] transition-colors">Yurtlar</Link>
+              <Link href="/spor-merkezi" className="block px-5 py-2.5 text-[13px] font-medium text-slate-700 hover:bg-slate-50 hover:text-[#DF1934] transition-colors">Spor Merkezi</Link>
+              <Link href="/veli-portali" className="block px-5 py-2.5 text-[13px] font-medium text-slate-700 hover:bg-slate-50 hover:text-[#DF1934] transition-colors">Veliler İçin</Link>
+            </div>
+          </div>
         </nav>
         {/* Right: Actions */}
         <div className="hidden lg:flex items-center gap-4 shrink-0">
@@ -135,12 +154,24 @@ export default function Header() {
               </div>
             </div>
 
-            <Link href="/taban-puanlar" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-bold tracking-widest text-slate-800 hover:text-[#DF1934] transition-colors border-b border-slate-100 pb-2">TABAN PUANLAR</Link>
-            <Link href="/veli-portali" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-bold tracking-widest text-slate-800 hover:text-[#DF1934] transition-colors border-b border-slate-100 pb-2">VELİLER İÇİN</Link>
-            <Link href="/spor-merkezi" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-bold tracking-widest text-slate-800 hover:text-[#DF1934] transition-colors border-b border-slate-100 pb-2">SPOR MERKEZİ</Link>
-            <Link href="/ucretler" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-bold tracking-widest text-slate-800 hover:text-[#DF1934] transition-colors border-b border-slate-100 pb-2">ÜCRETLER</Link>
-            <Link href="/yurtlar" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-bold tracking-widest text-slate-800 hover:text-[#DF1934] transition-colors border-b border-slate-100 pb-2">YURTLAR</Link>
-            <Link href="/burslar" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-bold tracking-widest text-slate-800 hover:text-[#DF1934] transition-colors border-b border-slate-100 pb-2">BURSLAR</Link>
+            <Link href="/kariyer-ve-mezunlar" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-bold tracking-widest text-slate-800 hover:text-[#DF1934] transition-colors border-b border-slate-100 pb-2">KARİYER & MEZUNLAR</Link>
+            <div className="flex flex-col gap-3">
+              <span className="text-[14px] font-bold tracking-widest text-slate-800 border-b border-slate-100 pb-2">ADAY ÖĞRENCİ</span>
+              <div className="flex flex-col gap-3 pl-4">
+                <Link href="/taban-puanlar" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-medium text-slate-600 hover:text-[#DF1934]">Taban Puanlar</Link>
+                <Link href="/ucretler" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-medium text-slate-600 hover:text-[#DF1934]">Ücretler</Link>
+                <Link href="/burslar" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-medium text-slate-600 hover:text-[#DF1934]">Burslar</Link>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-3">
+              <span className="text-[14px] font-bold tracking-widest text-slate-800 border-b border-slate-100 pb-2">KAMPÜS YAŞAMI</span>
+              <div className="flex flex-col gap-3 pl-4">
+                <Link href="/yurtlar" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-medium text-slate-600 hover:text-[#DF1934]">Yurtlar</Link>
+                <Link href="/spor-merkezi" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-medium text-slate-600 hover:text-[#DF1934]">Spor Merkezi</Link>
+                <Link href="/veli-portali" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-medium text-slate-600 hover:text-[#DF1934]">Veliler İçin</Link>
+              </div>
+            </div>
             
             <div className="pt-4 mt-2">
               <a 

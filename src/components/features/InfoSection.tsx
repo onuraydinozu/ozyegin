@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Award, Wallet, Target, Globe, Building2, ArrowRight } from "lucide-react";
+import { Award, Wallet, Target, Globe, Building2, ArrowRight, BookOpen } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -12,7 +12,7 @@ const cards = [
     title: "Modern Kampüs",
     description: "Doğayla iç içe, sürdürülebilir ve teknolojik altyapıya sahip LEED sertifikalı binalar.",
     icon: Building2,
-    image: "/images/campus1.jpg",
+    image: "https://www.ozyegin.edu.tr/sites/default/files/3-futbol_sahasi_0.jpg",
     link: "https://www.ozyegin.edu.tr/tr/kampus-hayati",
     color: "from-blue-600 to-[#1B365D]"
   },
@@ -21,7 +21,7 @@ const cards = [
     title: "Burslar",
     description: "Eğitiminizin her aşamasında %100'e varan karşılıksız burs olanaklarıyla daima yanınızdayız.",
     icon: Award,
-    image: "/images/campus2.jpg",
+    image: "https://www.ozyegin.edu.tr/sites/default/files/spor_salonu.jpg",
     link: "/burslar",
     color: "from-[#DF1934] to-red-900"
   },
@@ -30,7 +30,7 @@ const cards = [
     title: "Ücretler",
     description: "Şeffaf ve sürdürülebilir finansal planlama seçenekleriyle geleceğinize güvenle yatırım yapın.",
     icon: Wallet,
-    image: "/images/campus3.jpg",
+    image: "https://www.ozyegin.edu.tr/sites/default/files/yuzme_havuzu.jpg",
     link: "/ucretler",
     color: "from-[#0066FF] to-blue-900"
   },
@@ -39,17 +39,17 @@ const cards = [
     title: "Taban Puanlar",
     description: "En güncel YKS verileri, sıralamalar ve geniş kontenjanlar ile üniversite hedefinizi netleştirin.",
     icon: Target,
-    image: "/images/campus2.jpg",
+    image: "https://www.ozyegin.edu.tr/sites/default/files/05d96c93-a857-4a9a-9f71-8c3fcd3a98cc_0.jpg",
     link: "/taban-puanlar",
     color: "from-emerald-500 to-emerald-900"
   },
   {
     id: 5,
-    title: "Uluslararası Deneyim",
-    description: "Değişim programları ve yurt dışı staj olanaklarıyla global bir vizyon edinin.",
-    icon: Globe,
-    image: "/images/campus3.jpg",
-    link: "https://www.ozyegin.edu.tr/tr/uluslararasi-ofis",
+    title: "Fakülteler",
+    description: "6 Fakülte, 2 Yüksekokul ve yenilikçi eğitim modelleri ile geleceğini tasarla.",
+    icon: BookOpen,
+    image: "https://www.ozyegin.edu.tr/sites/default/files/tesis3_2.jpg",
+    link: "/fakulteler/uygulamali-bilimler",
     color: "from-amber-500 to-orange-700"
   }
 ];
@@ -86,8 +86,8 @@ export default function InfoSection() {
           </motion.p>
         </div>
 
-        {/* Expanding Cards Desktop / Stacked Mobile */}
-        <div className="flex flex-col md:flex-row gap-4 h-[700px] md:h-[600px] lg:h-[650px] w-full">
+        {/* Expanding Cards Desktop / Stacked Mobile (Bitişik Görünüm) */}
+        <div className="flex flex-col md:flex-row gap-0 h-[700px] md:h-[600px] lg:h-[650px] w-full rounded-[2rem] overflow-hidden shadow-2xl bg-slate-900">
           {cards.map((card) => {
             const isActive = activeCard === card.id;
             const Icon = card.icon;
@@ -98,8 +98,8 @@ export default function InfoSection() {
                 layout
                 onMouseEnter={() => setActiveCard(card.id)}
                 onClick={() => setActiveCard(card.id)}
-                className={`relative rounded-[2rem] overflow-hidden cursor-pointer transition-all duration-500 flex-shrink-0 shadow-[0_20px_50px_rgba(0,0,0,0.15)]
-                  ${isActive ? 'md:flex-[4] lg:flex-[5] flex-[4]' : 'md:flex-[1] flex-[1] hover:shadow-[0_20px_50px_rgba(0,0,0,0.25)]'}
+                className={`relative overflow-hidden cursor-pointer transition-all duration-500 flex-shrink-0 border-r border-white/10 last:border-r-0
+                  ${isActive ? 'md:flex-[4] lg:flex-[5] flex-[4]' : 'md:flex-[1] flex-[1] hover:bg-white/5'}
                 `}
                 style={{
                   height: '100%',
@@ -116,19 +116,19 @@ export default function InfoSection() {
                 </div>
                 
                 {/* Gradient Overlays */}
-                <div className={`absolute inset-0 transition-opacity duration-500 bg-gradient-to-t ${isActive ? 'from-slate-900/95 via-slate-900/40 to-transparent' : 'from-slate-900/90 via-slate-900/60 to-slate-900/40'}`} />
-                <div className={`absolute inset-0 bg-gradient-to-br ${card.color} mix-blend-multiply transition-opacity duration-500 ${isActive ? 'opacity-40' : 'opacity-80'}`} />
+                <div className={`absolute inset-0 transition-opacity duration-500 bg-gradient-to-t ${isActive ? 'from-slate-900/95 via-slate-900/40 to-transparent' : 'from-slate-900/95 via-slate-900/70 to-slate-900/40'}`} />
+                <div className={`absolute inset-0 bg-gradient-to-br ${card.color} mix-blend-overlay transition-opacity duration-500 ${isActive ? 'opacity-40' : 'opacity-80'}`} />
 
                 {/* Content */}
                 <div className={`absolute inset-0 flex transition-all duration-500 ${isActive ? 'flex-col justify-end p-6 md:p-8' : 'flex-row md:flex-col justify-start md:justify-end items-center p-6 md:py-8 gap-4'}`}>
                   
                   {/* Icon */}
-                  <div className={`flex shrink-0 items-center justify-center rounded-full bg-white/10 backdrop-blur-md border shadow-2xl transition-all duration-500 ${isActive ? 'w-16 h-16 border-white/30' : 'w-12 h-12 border-white/10 group-hover:border-white/30'}`}>
+                  <div className={`flex shrink-0 items-center justify-center rounded-full bg-white/10 backdrop-blur-md border shadow-2xl transition-all duration-500 z-10 ${isActive ? 'w-16 h-16 border-white/30' : 'w-12 h-12 border-white/10 group-hover:border-white/30'}`}>
                     <Icon className="text-white" size={isActive ? 32 : 24} />
                   </div>
                   
                   {isActive ? (
-                    <div className="w-full overflow-hidden flex flex-col justify-end h-full">
+                    <div className="w-full overflow-hidden flex flex-col justify-end h-full relative z-10">
                       <div className="mt-auto">
                         <motion.h3 
                           initial={{ opacity: 0, y: 10 }}
@@ -159,11 +159,11 @@ export default function InfoSection() {
                   ) : (
                     <>
                       {/* Mobile Title (Horizontal) */}
-                      <h3 className="font-bold text-white text-xl md:hidden whitespace-nowrap drop-shadow-md opacity-90">
+                      <h3 className="font-bold text-white text-xl md:hidden whitespace-nowrap drop-shadow-md opacity-90 relative z-10">
                         {card.title}
                       </h3>
                       {/* Desktop Title (Vertical) */}
-                      <h3 className="font-bold text-white text-xl hidden md:block [writing-mode:vertical-rl] rotate-180 opacity-70 tracking-widest whitespace-nowrap">
+                      <h3 className="font-bold text-white text-xl hidden md:block [writing-mode:vertical-rl] rotate-180 opacity-90 tracking-widest whitespace-nowrap relative z-10">
                         {card.title}
                       </h3>
                     </>
